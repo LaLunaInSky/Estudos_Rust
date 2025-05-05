@@ -1,1 +1,1 @@
-https://doc.rust-lang.org/book/ch03-00-common-programming-concepts.html
+https://doc.rust-lang.org/book/ch03-02-data-types.html
