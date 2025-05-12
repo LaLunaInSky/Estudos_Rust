@@ -1,0 +1,1 @@
+Ciar um programa que converta temperaturas entre Fahrenheit e Celsius.
