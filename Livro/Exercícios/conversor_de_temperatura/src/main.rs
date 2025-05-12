@@ -2,7 +2,7 @@ use std::io;
 
 fn obter_a_escolha_do_usuário_sobre_a_temperatura_que_quer_converter() -> u32 {
     loop {
-        println!("Qual Convertor você quer usar?\n [ 1 ] Celsius Para Fahrenheit\n [ 2 ] Fahrenheit para Celsius");
+        println!("Qual Conversor você quer usar?\n [ 1 ] Celsius Para Fahrenheit\n [ 2 ] Fahrenheit para Celsius");
 
         let mut resposta_da_pergunta = String::new();
 
@@ -39,7 +39,7 @@ fn obter_temperatura_celsius_digitado_pelo_usuário() -> f32 {
     }
 }
 
-fn obter_temperatura_fahrenheit_digitado_pelo_usuário() -> u32 {    
+fn obter_temperatura_fahrenheit_digitado_pelo_usuário() -> f32 {    
     loop {
         println!("\nInforme a temperatura em Fahrenheit que você quer converter");
 
@@ -49,7 +49,7 @@ fn obter_temperatura_fahrenheit_digitado_pelo_usuário() -> u32 {
             .read_line(&mut temperatura_fahrenheit)
             .expect("Falha ao ler a temperatura");
 
-        let temperatura_fahrenheit: u32 = match temperatura_fahrenheit.trim().parse() {
+        let temperatura_fahrenheit: f32 = match temperatura_fahrenheit.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         };
@@ -59,7 +59,11 @@ fn obter_temperatura_fahrenheit_digitado_pelo_usuário() -> u32 {
 }
 
 fn converter_celsius_em_fahrenheit(temperatura_celsius: f32) -> f32 {
-    return (temperatura_celsius * 1.8) + 32.0;
+    return ((temperatura_celsius * 1.8) + 32.0).floor();
+}
+
+fn converter_fahrenheit_em_celsius(temperatura_fahrenheit: f32) -> f32 {
+    return ((temperatura_fahrenheit - 32.0) * 0.555555556).floor();
 }
 
 fn main() {
@@ -72,8 +76,10 @@ fn main() {
 
         println!("A temperatura de {_temperatura_em_celsius_digitado_pelo_usuário}°C, convertido em Farenheit é de {temparuta_convertida_em_fahrenheit}°F");
     } else {
-        let _temperatura_em_fahrenheit_digitado_pelo_usuário: u32 = obter_temperatura_fahrenheit_digitado_pelo_usuário();
+        let _temperatura_em_fahrenheit_digitado_pelo_usuário: f32 = obter_temperatura_fahrenheit_digitado_pelo_usuário();
 
-        println!("A temperatura de {_temperatura_em_fahrenheit_digitado_pelo_usuário}°F, convertido em Celsius é de 0°C");
+        let temperatura_convertida_em_celsius: f32 = converter_fahrenheit_em_celsius(_temperatura_em_fahrenheit_digitado_pelo_usuário);
+
+        println!("A temperatura de {_temperatura_em_fahrenheit_digitado_pelo_usuário}°F, convertido em Celsius é de {temperatura_convertida_em_celsius}°C");
     }
 }
