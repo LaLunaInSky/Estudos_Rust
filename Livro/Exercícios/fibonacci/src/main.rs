@@ -33,7 +33,9 @@ fn mostrar_n_termos_da_sequência_de_fibonacci(quantidade_de_termos: u32) {
             posição_da_sequência = 1;
             
             antipenúltimo_termo_da_sequência = último_termo_da_sequência + penúltimo_termo_da_sequência;
+
             penúltimo_termo_da_sequência = antipenúltimo_termo_da_sequência + último_termo_da_sequência;
+            
             último_termo_da_sequência = antipenúltimo_termo_da_sequência + penúltimo_termo_da_sequência;
 
         } else if posição_da_sequência % 2 == 0 {
