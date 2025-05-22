@@ -42,9 +42,11 @@ mod back_of_house {
     fn cook_order() {}
 }
 
-use crate::front_of_house::hosting;
-use crate::back_of_house::Appetizer;
-use crate::back_of_house::Breakfast;
+pub use crate::front_of_house::hosting;
+// pub use crate::back_of_house::Appetizer;
+// pub use crate::back_of_house::Breakfast;
+
+pub use crate::back_of_house::{Appetizer, Breakfast};
 
 pub fn eat_at_restaurant() {
     // Absolute path
@@ -93,3 +95,12 @@ fn function_01() -> Result {
 fn function_02() -> IoResult<()> {
     // -- snip --
 }
+
+//
+
+// use std::io;
+// use std::io::Write;
+use std::io::{self, Write};
+
+//
+use std::collections::*;
