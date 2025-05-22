@@ -42,15 +42,21 @@ mod back_of_house {
     fn cook_order() {}
 }
 
+use crate::front_of_house::hosting;
+use crate::back_of_house::Appetizer;
+use crate::back_of_house::Breakfast;
+
 pub fn eat_at_restaurant() {
     // Absolute path
-    crate::front_of_house:: hosting::add_to_waitlist();
+    // crate::front_of_house::hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
 
     // Relative path
-    front_of_house::hosting::add_to_waitlist();
+    // front_of_house::hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
 
     //
-    let mut meal = back_of_house::Breakfast::summer("Rye");
+    let mut meal = Breakfast::summer("Rye");
 
     meal.toast = String::from("Wheat");
     
@@ -59,8 +65,31 @@ pub fn eat_at_restaurant() {
     );
 
     //
-    let order_01 = back_of_house::Appetizer::Soup;
-    let order_02 = back_of_house::Appetizer::Salad;
+    let _order_01 = Appetizer::Soup;
+    let _order_02 = Appetizer::Salad;
 }
 
 fn deliver_order() {}
+
+//
+// use std::fmt;
+// use std::io;
+
+// fn function_01() -> fmt::Result {
+//     // -- snip --
+// }
+
+// fn function_02() -> io::Result {
+//     // -- snip --
+// }
+
+use std::fmt::Result;
+use std::io::Result as IoResult;
+
+fn function_01() -> Result {
+    // -- snip --
+}
+
+fn function_02() -> IoResult<()> {
+    // -- snip --
+}
