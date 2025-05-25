@@ -1,0 +1,1 @@
+Dada uma lista de inteiros, use um vetor e retorne a mediana (quando classificado, o valor na posição intermediária) e a moda (o valor que ocorre com mais frequência; um mapa de hash será útil aqui) da lista.
