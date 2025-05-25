@@ -28,4 +28,48 @@ fn main() {
             "The team {key} have score to {value}"
         );
     }
+
+    //
+    let field_name_01 = String::from("Favorite color");
+    let field_value_01 = String::from("Blue");
+
+    let mut map_01 = HashMap::new();
+    map_01.insert(
+        &field_name_01, &field_value_01
+    );
+
+    println!(
+        "\n{map_01:?}\n{field_name_01}\n{field_value_01}"
+    );
+
+    //
+    scores.insert(
+        team_blue, 25
+    );
+
+    println!(
+        "\n{scores:?}"
+    );
+
+    //
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+
+    println!(
+        "\n{scores:?}"
+    );
+
+    //
+    let text_01 = "hello world wonderful world";
+
+    let mut map_02 = HashMap::new();
+
+    for word in text_01.split_whitespace() {
+        let count = map_02.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!(
+        "\n{map_02:?}"
+    );
 }
