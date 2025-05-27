@@ -1,11 +1,11 @@
-use std::{process::Command, fs::File, io::{self, ErrorKind, Read}};
+use std::{process::Command, io::{self, ErrorKind, Read}, fs::{self, File}, error::Error};
 
 // enum Result<T, E> {
 //     Ok(T),
 //     Err(E),
 // }
 
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     limpar_o_terminal();
 
     // let greeting_file_result = File::open("hello_01.txt");
@@ -41,7 +41,24 @@ fn main() {
     //
     let username = read_username_from_file();
 
-    println!("{username:?}")
+    println!("{username:?}");
+
+    //
+    //let greeting_file_03 = File::open("hello_02.txt")?;
+
+    //
+    let last_char = last_char_of_first_line("Hello, world!");
+
+    println!("{last_char:?}");
+
+    //
+    let greeting_file_04 = File::open("hello_02.txt")?;
+
+    Ok(())
+}
+
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
@@ -60,12 +77,22 @@ fn read_username_from_file() -> Result<String, io::Error> {
     // }
 
     // or 
-    let mut username_file = File::open("hello_01.txt")?;
+    // let mut username_file = File::open("hello_01.txt")?;
 
-    let mut username = String::new();
-    username_file.read_to_string(&mut username)?;
+    // let mut username = String::new();
+    // username_file.read_to_string(&mut username)?;
     
-    Ok(username)
+    // Ok(username)
+
+    // or
+    // let mut username = String::new();
+
+    // File::open("hello_01.txt")?.read_to_string(&mut username)?;
+
+    // Ok(username)
+
+    // or 
+    fs::read_to_string("hello_01.txt")
 }
 
 fn limpar_o_terminal() {
