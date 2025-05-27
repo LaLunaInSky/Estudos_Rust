@@ -39,7 +39,7 @@ fn mostrar_opções_dos_setores_da_empresa(vec_nome_dos_setores: &Vec<&str>) {
     }
 }
 
-fn mostrar_menu_principal_de_opções_da_empresa(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: & mut HashMap<&&str, Vec<String>>) {
+fn mostrar_menu_principal_de_opções_da_empresa(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: &mut HashMap<&&str, Vec<String>>) {
     loop {
         println!();
         println!("[ 1 ] Ver Todos Os Funcionários da Empresa, separados por setor");
@@ -65,7 +65,7 @@ fn mostrar_menu_principal_de_opções_da_empresa(vec_nome_dos_setores: &Vec<&str
     }
 }
 
-fn escolher_setor_da_empresa_para_ver(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: & mut HashMap<&&str, Vec<String>>) {    
+fn escolher_setor_da_empresa_para_ver(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: &mut HashMap<&&str, Vec<String>>) {    
     loop {
         mostrar_opções_dos_setores_da_empresa(vec_nome_dos_setores);
 
