@@ -1,7 +1,7 @@
 use std::{collections::HashMap, process::Command, io};
 
 fn main() {
-    // limpar_o_terminal();
+    limpar_o_terminal();
 
     let nomes_dos_funcionários: [&str; 5] = [
         "julia", "ana", "luiz", "joão", "lucas"
@@ -25,7 +25,7 @@ fn main() {
         }
     }
 
-    // mostrar_menu_principal_de_opções_da_empresa(&setores_da_empresa, &mut mapa_de_funcionários_da_empresa);
+    mostrar_menu_principal_de_opções_da_empresa(&setores_da_empresa, &mut mapa_de_funcionários_da_empresa);
 
 }
 
@@ -105,7 +105,9 @@ fn adicionar_novo_funcionário_em_um_setor_n(vec_nome_dos_setores: &Vec<&str>, m
 
     let mut nome_do_novo_funcionário = String::new();
 
-    io::stdin().lock().read_line(&mut nome_do_novo_funcionário).unwrap();
+    io::stdin().read_line(&mut nome_do_novo_funcionário).expect("Falha ao ler o input");
+
+    let nome_do_novo_funcionário = &nome_do_novo_funcionário[0..(nome_do_novo_funcionário.len()-1)];
 
     limpar_o_terminal();
 
