@@ -23,54 +23,80 @@ fn main() {
         }
     }
 
-    // println!(
-    //     "{mapa_de_funcionários_da_empresa:?}"
-    // );
+    mostrar_menu_principal_de_opções_da_empresa(&setores_da_empresa, &mut mapa_de_funcionários_da_empresa);
 
-    let opção_escolhida = escolher_setor_da_empresa(&setores_da_empresa);
+}
 
-    println!();
+fn mostrar_opções_dos_setores_da_empresa(vec_nome_dos_setores: &Vec<&str>) {
+    let mut quantidade_de_setores = 1;
 
-    for (key, values) in &mapa_de_funcionários_da_empresa {
-        if **key == setores_da_empresa[opção_escolhida] {
-            mostrar_funcionários_do_setor_n(setores_da_empresa[opção_escolhida], values);
-        } 
+    for setor in vec_nome_dos_setores {
+        println!(
+            "[ {quantidade_de_setores} ] {setor}"
+        );
+
+        quantidade_de_setores += 1;
     }
 }
 
-fn mostrar_todos_os_setores_da_empresa() {
-    
+fn mostrar_menu_principal_de_opções_da_empresa(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: & mut HashMap<&&str, Vec<String>>) {
+    loop {
+        println!();
+        println!("[ 1 ] Ver Todos Os Funcionários da Empresa, separados por setor");
+        println!("[ 2 ] Ver Todos os Funcionários de um setor da Empresa");
+        println!("[ 3 ] Adicionar um Novo Funcionário em um Setor da Empresa");
+        println!("[ 4 ] Encerrar O Programa");
+
+        let mut opção_escolhida_do_menu_principal = String::new();
+
+        io::stdin().read_line(&mut opção_escolhida_do_menu_principal).expect("Falha ao ler o input");
+
+        let opção_escolhida_do_menu_principal: usize = opção_escolhida_do_menu_principal.trim().parse().expect("Falha ao converter o input lido");
+
+        if opção_escolhida_do_menu_principal > 0 && opção_escolhida_do_menu_principal < 5 {
+            println!();
+
+            if opção_escolhida_do_menu_principal == 2 {
+                escolher_setor_da_empresa_para_ver(vec_nome_dos_setores, mapa_da_empresa);
+            } else if opção_escolhida_do_menu_principal == 4 {
+                break;
+            }
+        }    
+    }
 }
 
-fn escolher_setor_da_empresa(vec_nome_dos_setores: &Vec<&str>) -> usize {
+fn escolher_setor_da_empresa_para_ver(vec_nome_dos_setores: &Vec<&str>, mapa_da_empresa: & mut HashMap<&&str, Vec<String>>) {    
     loop {
-        let mut quantidade_de_setores = 1;
-
-        for setor in vec_nome_dos_setores {
-            println!(
-                "[ {quantidade_de_setores} ] {setor}"
-            );
-
-            quantidade_de_setores += 1;
-        }
+        mostrar_opções_dos_setores_da_empresa(vec_nome_dos_setores);
 
         println!(
-            "Qual setor você quer ver? "
+            "Qual setor você quer escolhe? "
         );
 
         let mut opção_escolhida_do_menu = String::new();
 
+
         io::stdin().read_line(&mut opção_escolhida_do_menu).expect("Falha ao ler o input");
 
-        let opção_escolhida_do_menu: usize = opção_escolhida_do_menu.trim().parse().expect("Falha ao transferir string em número.");
+        let mut opção_escolhida_do_menu: usize = opção_escolhida_do_menu.trim().parse().expect("Falha ao transferir string em número.");
 
         if opção_escolhida_do_menu > 0 && opção_escolhida_do_menu <= 6 {
-            return opção_escolhida_do_menu - 1;
+            opção_escolhida_do_menu -= 1;
+            
+            println!();
+
+            for (key, values) in mapa_da_empresa {
+                if ***key == *vec_nome_dos_setores[opção_escolhida_do_menu] {
+                    mostrar_funcionários_do_setor_n(vec_nome_dos_setores[opção_escolhida_do_menu], values);
+                } 
+            }
+            
+            break;
         }
     }
 }
 
-fn mostrar_funcionários_do_setor_n(nome_do_setor: &str, vector_de_nome: &Vec<String>) {
+fn mostrar_funcionários_do_setor_n(nome_do_setor: &str, vector_de_nome: &mut Vec<String>) {
     println!{
         "-- Setor {} --", nome_do_setor
     };
