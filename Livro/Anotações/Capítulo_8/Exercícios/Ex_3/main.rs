@@ -101,25 +101,37 @@ fn adicionar_novo_funcionário_em_um_setor_n(vec_nome_dos_setores: &Vec<&str>, m
 
     limpar_o_terminal();
 
-    println!("Qual o nome do funcionário que vai ser adicionado no setor {}?", vec_nome_dos_setores[opção_escolhida_do_menu_de_setores]);
+    loop {
+        println!("Qual o nome do funcionário que vai ser adicionado no setor {}?", vec_nome_dos_setores[opção_escolhida_do_menu_de_setores]);
+    
+        let mut nome_do_novo_funcionário = String::new();
+    
+        io::stdin().read_line(&mut nome_do_novo_funcionário).expect("Falha ao ler o input");
+    
+        let nome_do_novo_funcionário = &nome_do_novo_funcionário[0..(nome_do_novo_funcionário.len()-1)].to_lowercase();
+    
+        if nome_do_novo_funcionário.len() > 2 {
+            limpar_o_terminal();
+        
+            println!("O funcionário {nome_do_novo_funcionário} foi adicionado com sucesso no setor {}!", vec_nome_dos_setores[opção_escolhida_do_menu_de_setores]);
 
-    let mut nome_do_novo_funcionário = String::new();
+            println!();
+        
+            for (key, values) in mapa_da_empresa {
+                if ***key == *vec_nome_dos_setores[opção_escolhida_do_menu_de_setores] {
+                    values.push(nome_do_novo_funcionário.to_string());
 
-    io::stdin().read_line(&mut nome_do_novo_funcionário).expect("Falha ao ler o input");
+                    mostrar_funcionários_do_setor_n(vec_nome_dos_setores[opção_escolhida_do_menu_de_setores], values);
+                } 
+            };
+        
+            println!();
 
-    let nome_do_novo_funcionário = &nome_do_novo_funcionário[0..(nome_do_novo_funcionário.len()-1)];
-
-    limpar_o_terminal();
-
-    println!("O funcionário {nome_do_novo_funcionário} foi adicionado com sucesso no setor {}!", vec_nome_dos_setores[opção_escolhida_do_menu_de_setores]);
-
-    println!();
-
-    for (key, values) in mapa_da_empresa {
-        if ***key == *vec_nome_dos_setores[opção_escolhida_do_menu_de_setores] {
-            mostrar_funcionários_do_setor_n(vec_nome_dos_setores[opção_escolhida_do_menu_de_setores], values);
-        } 
-    };
+            break;
+        } else {
+            limpar_o_terminal();
+        }
+    }
 }
 
 fn mostrar_todos_os_funcionarios_da_empresa_separados_por_setor(mapa_da_empresa: &mut HashMap<&&str, Vec<String>>) {    
