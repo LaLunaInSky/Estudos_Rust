@@ -12,10 +12,25 @@ impl<T> Point<T> {
     }
 }
 
+impl Point<f32> {
+    fn distance_from_origin(&self) -> f32 {
+        (self.x.powi(2) + self.y.powi(2)).sqrt()
+    }
+}
+
 #[derive(Debug)]
 struct PointGeneric<T, U> {
     x: T,
     y: U,
+}
+
+impl<T, U> PointGeneric<T, U> {
+    fn mixup<T2, U2>(self, other: PointGeneric<T2, U2>) -> PointGeneric<T, U2> {
+        PointGeneric {
+            x: self.x,
+            y: other.y,
+        }
+    }
 }
 
 fn clean_of_terminal() {
@@ -80,8 +95,20 @@ fn main() {
     println!();
 
     let point_one_type = Point { x: 5, y: 10 };
-    let point_two_type = PointGeneric { x: 1, y: 4.2 };
 
-    println!("x = {} \ny = {}\n", point_one_type.x(), point_one_type.y);
-    println!("x = {} \ny = {}", point_two_type.x, point_two_type.y);
+    let point_type_float = Point { x:5.2, y: 10.1};
+    
+    let point_two_type = PointGeneric { x: 1, y: 4.2 };
+    
+    let point_two_type_02 = PointGeneric { x: "hello", y: 'c' };
+
+    let point_two_type_03 = point_two_type.mixup(point_two_type_02);
+    
+    println!("x = {} \ny = {}", point_one_type.x(), point_one_type.y);
+    // println!("x = {} \ny = {}", point_two_type.x, point_two_type.y);
+
+    println!("\n{}\n", point_type_float.distance_from_origin());
+
+    // println!("x = {} \ny = {}", point_two_type_02.x, point_two_type_02.y);
+    println!("x = {} \ny = {}", point_two_type_03.x, point_two_type_03.y);
 }
