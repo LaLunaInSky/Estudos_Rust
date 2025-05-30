@@ -1,3 +1,31 @@
+use std::fmt::Display;
+
+struct Pair<T> {
+    x: T,
+    y: T,
+}
+
+impl<T> Pair<T> {
+    fn new(x: T, y: T) -> self {
+        self { x, y }
+    }
+}
+
+impl<T: Display + PartialOrd> Pair<T> {
+    fn cmp_display(&self) {
+        if self.x >= self.y {
+            println!(
+                "The largest member is x = {}", self.x
+            );
+        } else {
+            println!(
+                "The largest member is y = {}", self.y
+            );
+        }
+    }
+}
+
+
 pub trait Summary {
     fn summarize_author(&self) -> String;
 
@@ -25,6 +53,14 @@ pub fn notify<T: Summary>(item: &T) {
 // pub fn notify(item: &(impl Summary + Display)) {
 
 // pub fn notify<T: Summary + Display>(item: &T) {
+
+// fn some_function<T: Display + Clone, U: Clone + Debug>(t: &T, u: &T) -> i32 {
+
+// fn some_function<T, U>(t: &T, u: &U) -> i32
+// where
+//      T: Display + Clone,
+//      U: Clone + Debug,
+// {
 
 pub struct NewsArticle {
     pub headline: String,
@@ -62,4 +98,15 @@ impl Summary for SocialPost {
     //         "{}: {}", self.username, self.content
     //     )
     // }
+}
+
+pub fn returns_summarizable() -> impl Summary {
+    SocialPost {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        repost: false,
+    }
 }

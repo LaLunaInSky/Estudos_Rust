@@ -1,5 +1,5 @@
 use std::process::Command;
-use aggregator::{SocialPost, NewsArticle, Summary, notify};
+use aggregator::{SocialPost, NewsArticle, Summary, notify, returns_summarizable};
 
 fn clean_terminal() {
     Command::new("clear").status().unwrap();
@@ -44,4 +44,11 @@ fn main() {
 
     notify(&post);
     notify(&article);
+
+    //
+    let post_02 = returns_summarizable();
+
+    println!(
+        "\n1 new social post: {}", post_02.summarize()
+    );
 }
