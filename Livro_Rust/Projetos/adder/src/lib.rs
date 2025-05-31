@@ -61,6 +61,13 @@ pub fn prints_and_returns_10(a: i32) -> i32 {
     10
 }
 
+fn internal_adder(
+    left: usize, 
+    right: usize
+) -> usize {
+    left + right
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -171,5 +178,11 @@ mod tests {
     fn one_hundred() {
         let result = add_two(100);
         assert_eq!(result, 102);
+    }
+
+    #[test]
+    fn internal() {
+        let result = internal_adder(2, 2);
+        assert_eq!(result, 4);
     }
 }
