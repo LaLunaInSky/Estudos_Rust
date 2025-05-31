@@ -1,5 +1,10 @@
 use std::process::Command;
 
+#[derive(Debug)]
+struct ImportantExcerpt<'a> {
+    part: &'a str,
+}
+
 fn clean_terminal() {
     Command::new("clear").status().unwrap();
 }
@@ -28,6 +33,33 @@ fn main() {
 
     let result = longest(&string_01, &string_02);
     println!("The longest string is {result}");
+
+    //
+    println!();
+
+    let novel = String::from(
+        "Call me Ismael. Some years ago..."
+    );
+
+    let first_sentence = novel.split('.').next().unwrap();
+
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
+
+    println!("{}", i.part);
+}
+
+fn first_word<'a>(s: &'a str) -> &'a str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumarate() {
+        if itwm == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
 
 fn longest<'a>(text_01: &'a String, text_02: &'a String) -> &'a String {
