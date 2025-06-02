@@ -1,3 +1,3 @@
-https://doc-rust--lang-org.translate.goog/book/ch12-04-testing-the-librarys-functionality.html?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
+https://doc-rust--lang-org.translate.goog/book/ch12-05-working-with-environment-variables.html?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
 
 *  *
