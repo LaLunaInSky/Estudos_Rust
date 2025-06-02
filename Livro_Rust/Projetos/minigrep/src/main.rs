@@ -1,4 +1,4 @@
-use std::{env, fs};
+use std::{env, fs, process};
 
 struct Config {
     query: String,
@@ -6,19 +6,25 @@ struct Config {
 }
 
 impl Config {
-    fn new(args: &[String]) -> Config {
+    fn build(args: &[String]) -> Result<Config, &'static str> {
+        if args.len() < 3 {
+            return Err("not enough arguments");
+        }
+
         let query = &args[1].clone();
         let file_path = &args[2].clone();
 
-        Config { query: query.to_string(), file_path: file_path.to_string() }
+        Ok(Config { query: query.to_string(), file_path: file_path.to_string() })
     }
 }
-
 
 fn main() {
     let args: Vec<String> = env::args().collect();
     
-    let config = Config::new(&args);
+    let config = Config::build(&args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {err}");
+        process::exit(1);
+    });
 
     println!("Searching for {0}", config.query);
     println!("In file {0}", config.file_path);
