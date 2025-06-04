@@ -1,4 +1,8 @@
-use std::process::Command;
+use std::{
+    process::Command,
+    time::Duration,
+    thread
+};
 
 #[derive(Debug, PartialEq, Copy, Clone)]
 enum ShirtColor {
@@ -65,4 +69,51 @@ fn main() {
     return_mensage(
         user_pref_02, giveaway_02
     );
+
+    //
+    println!();
+
+    let expensive_closure = |num: u32| -> u32 {
+        println!("calculating slowly...");
+
+        thread::sleep(Duration::from_secs(2));
+
+        println!("{num}");
+        
+        num
+    };
+
+    expensive_closure(5);
+
+    //
+    println!();
+
+    let list_01 = vec![1, 2, 3];
+    println!("Before defining closure: {list_01:?}");
+
+    let only_borrows_01 = || println!("From closure: {list_01:?}");
+
+    println!("Before calling closure: {list_01:?}");
+    only_borrows_01();
+    println!("After calling closure: {list_01:?}");
+
+    println!();
+
+    let mut list_02 = vec![1, 2, 3];
+    println!("Before defining closure: {list_02:?}");
+
+    let mut borrows_mutably = || list_02.push(7);
+
+    borrows_mutably();
+    println!("After calling closure: {list_02:?}");
+
+    //
+    println!();
+
+    let list_03 = vec![1, 2, 3];
+    println!("Before defining closure: {list_03:?}");
+
+    thread::spawn(move || println!("From thread: {list_03:?}"))
+        .join()
+        .unwrap();
 }
