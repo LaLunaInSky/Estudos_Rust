@@ -11,7 +11,7 @@ struct Inventory {
 }
 
 impl Inventory {
-    fn give_away(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
+    fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         user_preference.unwrap_or_else(|| self.most_stocked())
     }
 
@@ -38,10 +38,10 @@ fn clean_terminal() {
     Command::new("clear").status().unwrap();
 }
 
-fn return_mensage(user: Option<ShirtColor>, give_away: ShirtColor) {
+fn return_mensage(user: Option<ShirtColor>, giveaway: ShirtColor) {
     println!(
         "The user with preference {:?} gets {:?}",
-        user, give_away
+        user, giveaway
     );
 }
 
@@ -53,16 +53,16 @@ fn main() {
     };
 
     let user_pref_01 = Some(ShirtColor::Red);
-    let give_away_01 = store.give_away(user_pref_01);
+    let giveaway_01 = store.giveaway(user_pref_01);
 
     return_mensage(
-        user_pref_01, give_away_01
+        user_pref_01, giveaway_01
     );
 
     let user_pref_02 = None;
-    let give_away_02 = store.give_away(user_pref_02);
+    let giveaway_02 = store.giveaway(user_pref_02);
 
     return_mensage(
-        user_pref_02, give_away_02
+        user_pref_02, giveaway_02
     );
 }
