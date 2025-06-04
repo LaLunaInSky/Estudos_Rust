@@ -38,6 +38,12 @@ impl Inventory {
     }
 }
 
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
 fn clean_terminal() {
     Command::new("clear").status().unwrap();
 }
@@ -116,4 +122,22 @@ fn main() {
     thread::spawn(move || println!("From thread: {list_03:?}"))
         .join()
         .unwrap();
+
+    //
+    println!();
+
+    let mut list_04 = [
+        Rectangle { width: 10, height: 1 },
+        Rectangle { width: 3, height: 5 },
+        Rectangle { width: 7, height: 12 },
+    ];
+
+    let mut num_sort_operations = 0;
+
+    list_04.sort_by_key(|r| {
+        num_sort_operations += 1;
+        r.width
+    });
+
+    println!("{list_04:#?}, sorted in {num_sort_operations} oprations");
 }
