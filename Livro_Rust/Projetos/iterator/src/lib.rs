@@ -36,7 +36,7 @@ mod tests {
     }
 
     #[test]
-    fn folters_by_size() {
+    fn filters_by_size() {
         let shoes = vec![
             Shoe {
                 size: 10,
