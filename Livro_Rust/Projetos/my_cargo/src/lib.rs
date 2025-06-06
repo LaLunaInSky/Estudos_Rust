@@ -1,3 +1,7 @@
+//! # My Crate
+//! 
+//! `my_crate` is a collection of utilities to make performing certain calculations more convenient.
+
 /// Adds one to the number given.
 /// 
 /// # Examples
@@ -13,28 +17,9 @@ pub fn add_one(x: i32) -> i32 {
     x + 1
 }
 
-/// # Examples 
-/// ```
-/// let x = 2;
-/// let y = 4;
-/// 
-/// let result = my_cargo::add(x, y);
-/// 
-/// assert_eq!(result, 6);
-/// ```
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
 
     #[test]
     fn it_works_add_one() {
