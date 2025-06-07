@@ -8,7 +8,7 @@ fn clean_terminal() {
 }
 
 enum List {
-    Cons(i32, List),
+    Cons(i32, Box<List>),
     Nil,
 }
 
@@ -22,5 +22,5 @@ fn main() {
     //
     println!();
 
-    let list_01 = Cons(1, Cons(2, Cons(3, Nil)));
+    let list_01 = Box::new(1, Box::new(2, Box::new(3, Box::new(Nil))));
 }
