@@ -23,6 +23,10 @@ impl<T> Deref for MyBox<T> {
     }    
 }
 
+fn hello(name: &str) {
+    println!("Hello, {name}!");
+}
+
 fn main() {
     clean_terminal();
     
@@ -33,4 +37,10 @@ fn main() {
 
     assert_eq!(5, x);
     assert_eq!(5, *y);
+
+    //
+    let m = MyBox::new(String::from("Rust"));
+
+    // hello(&(*m)[..]);
+    hello(&m);
 }
