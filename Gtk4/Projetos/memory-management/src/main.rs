@@ -3,8 +3,15 @@ use gtk::{
     glib,
     Application,
     ApplicationWindow,
-    Button
+    Button,
 };
+
+use std::{
+    cell::Cell,
+    rc::Rc,
+};
+
+use crate::glib::clone;
 
 const APP_ID: &str = "org.gtk_rs.MemoryManagement";
 
@@ -17,9 +24,35 @@ fn build_ui(app: &Application) {
         .margin_end(12)
         .build();
 
-    let mut number = 0;
+    let button_decrease = Button::builder()
+        .label("Decrease")
+        .margin_top(12)
+        .margin_bottom(12)
+        .margin_start(12)
+        .margin_end(12)
+        .build();
 
-    button_increase.connect_clicked(|_| number += 1);
+    let number = Rc::new(Cell::new(0));
+
+    button_increase.connect_clicked(clone!(
+        #[weak]
+        number,
+        #[weak]
+        button_decrease,
+        move |_| {
+            number.set(number.get() + 1);
+            button_decrease.set_label(&number.get().to_string());
+        }
+    ));
+
+    button_decrease.connect_clicked(clone!(
+        #[weak]
+        button_increase,
+        move |_| {
+            number.set(number.get() - 1);
+            button_increase.set_label(&number.get().to_string());
+        }
+    ));
 
     let window = ApplicationWindow::builder()
         .application(app)
