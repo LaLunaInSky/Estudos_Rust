@@ -7,12 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <h1
+    <main
         class="
-            text-3xl font-bold underline
+            flex-wrap w-full h-screen content-center justify-items-center
         "
     >
-        Hello, World!
-    </h1>
+        <h1
+            class="
+                text-5xl font-bold text-center cursor-default
+            "
+        >
+            Hello, World!
+        </h1>
+        <button 
+            class="
+                w-screen py-2 font-semibold cursor-pointer hover:text-red-600
+            "
+            type="button"
+            onclick="getUser()"
+        >
+            Get user
+        </button>
+    </main>
+
+    <script>
+        const invoke = window.__TAURI__.core.invoke;
+
+        async function getUser() {
+            await invoke("get_user")
+        }
+    </script>
 </body>
 </html>
