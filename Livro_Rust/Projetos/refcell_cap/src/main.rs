@@ -8,5 +8,5 @@ fn main() {
     clean_terminal();
 
     let mut x = 5;
-    let y = &mut x;
+    let _y = &mut x;
 }
