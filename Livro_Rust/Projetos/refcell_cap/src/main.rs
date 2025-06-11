@@ -7,5 +7,6 @@ fn clean_terminal() {
 fn main() {
     clean_terminal();
 
-    println!("Hello, world!");
+    let x = 5;
+    let y = &mut x;
 }
