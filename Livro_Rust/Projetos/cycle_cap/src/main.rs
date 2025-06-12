@@ -24,6 +24,12 @@ impl List {
     }
 }
 
+#[derive(Debug)]
+struct Node {
+    value: i32,
+    children: RefCell<Vec<Rc<Node>>>,
+}
+
 fn clean_terminal() {
     Command::new("clear").status().unwrap();
 }
@@ -82,4 +88,17 @@ fn main() {
     // println!(
     //     "a next item = {:?}", a.tail()
     // );
+
+    //
+    println!();
+
+    let leaf = Rc::new(Node {
+        value: 3,
+        children: RefCell::new(vec![]),
+    });
+
+    let branch = Rc::new {
+        value: 5,
+        children: RefCell::new(vec![Rc::clone(&leaf)]),
+    };
 }
