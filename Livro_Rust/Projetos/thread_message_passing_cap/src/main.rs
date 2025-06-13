@@ -1,7 +1,8 @@
 use std::{
     process::Command,
     sync::mpsc,
-    thread
+    thread,
+    time::Duration
 };
 
 fn clean_terminal() {
@@ -14,12 +15,20 @@ fn main() {
     let (tx, rx) = mpsc::channel();
 
     thread::spawn(move || {
-        let val = String::from("hi");
-
-        tx.send(val).unwrap();
+        let vals = vec![
+            String::from("hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+        
+        for val in vals {
+            tx.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
     });
-
-    let received = rx.recv().unwrap();
     
-    println!("Got: {received}");
+    for received in rx {
+        println!("Got: {received}");
+    }
 }
