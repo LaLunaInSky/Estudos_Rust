@@ -1,5 +1,5 @@
 [package]
-name = "thread_simultneously_cap"
+name = "thread_simultaneously_cap"
 version = "0.1.0"
 edition = "2024"
 

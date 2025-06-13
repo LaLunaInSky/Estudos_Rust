@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "thread_simultneously_cap"
+name = "thread_simultaneously_cap"
 version = "0.1.0"
