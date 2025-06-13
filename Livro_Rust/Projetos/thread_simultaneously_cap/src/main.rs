@@ -32,9 +32,11 @@ fn main() {
 
     let v = vec![1, 2, 3];
 
-    let hanlde_02 = thread::spawn(|| {
+    let hanlde_02 = thread::spawn(move || {
         println!("Here's a vector: {v:?}");
     });
+
+    // drop(v);
 
     hanlde_02.join().unwrap();
 }
