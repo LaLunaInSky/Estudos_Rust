@@ -1,7 +1,8 @@
 use std::{
     process::Command,
     sync::Mutex,
-    thread
+    thread,
+    rc::Rc
 };
 
 fn clean_terminal() {
@@ -27,6 +28,8 @@ fn main() {
     let mut handles = vec![];
 
     for _ in 0..10 {
+        let counter = Rc::clone(&counter);
+
         let handle = thread::spawn(move || {
             let mut num = counter.lock().unwrap();
 
