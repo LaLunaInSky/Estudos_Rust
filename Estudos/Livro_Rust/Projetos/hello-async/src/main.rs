@@ -1,6 +1,12 @@
 use std::process::Command;
 use trpl::Html;
 
+enum PageTitleFuture<'a> {
+    Initial { url: &'a str },
+    GetAwaitPoint { url: &'a str },
+    TextAwaitPoint { response: trpl::Response },
+}
+
 async fn page_title(url: &str) -> Option<String> {
     let response = trpl::get(url).await;
     let response_text = response.text().await;
@@ -16,5 +22,14 @@ fn clean_terminal() {
 fn main() {
     clean_terminal();
 
-    println!("Hello, world!");
+    let args: Vec<String> = std::env::args().collect();
+
+    trpl::run(async {
+        let url = &args[1];
+
+        match page_title(url).await {
+            Some(title) => println!("The title for {url} was {title}"),
+            None => println!("{url} had no title"),
+        }
+    })
 }
