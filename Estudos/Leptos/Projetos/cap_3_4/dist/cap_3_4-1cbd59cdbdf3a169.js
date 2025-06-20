@@ -198,15 +198,15 @@ function getDataViewMemory0() {
     return cachedDataViewMemory0;
 }
 function __wbg_adapter_26(arg0, arg1, arg2) {
-    wasm.closure61_externref_shim(arg0, arg1, arg2);
+    wasm.closure91_externref_shim(arg0, arg1, arg2);
 }
 
 function __wbg_adapter_29(arg0, arg1, arg2) {
-    wasm.closure129_externref_shim(arg0, arg1, arg2);
+    wasm.closure160_externref_shim(arg0, arg1, arg2);
 }
 
-function __wbg_adapter_106(arg0, arg1, arg2, arg3) {
-    wasm.closure147_externref_shim(arg0, arg1, arg2, arg3);
+function __wbg_adapter_110(arg0, arg1, arg2, arg3) {
+    wasm.closure178_externref_shim(arg0, arg1, arg2, arg3);
 }
 
 const __wbindgen_enum_ReadableStreamType = ["bytes"];
@@ -467,6 +467,16 @@ function __wbg_get_imports() {
         const ret = arg0.insertBefore(arg1, arg2);
         return ret;
     }, arguments) };
+    imports.wbg.__wbg_instanceof_Element_0af65443936d5154 = function(arg0) {
+        let result;
+        try {
+            result = arg0 instanceof Element;
+        } catch (_) {
+            result = false;
+        }
+        const ret = result;
+        return ret;
+    };
     imports.wbg.__wbg_instanceof_ShadowRoot_726578bcd7fa418a = function(arg0) {
         let result;
         try {
@@ -498,7 +508,7 @@ function __wbg_get_imports() {
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_106(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_110(a, state0.b, arg0, arg1);
                 } finally {
                     state0.a = a;
                 }
@@ -535,6 +545,9 @@ function __wbg_get_imports() {
     imports.wbg.__wbg_removeEventListener_056dfe8c3d6c58f9 = function() { return handleError(function (arg0, arg1, arg2, arg3) {
         arg0.removeEventListener(getStringFromWasm0(arg1, arg2), arg3);
     }, arguments) };
+    imports.wbg.__wbg_remove_e2d2659f3128c045 = function(arg0) {
+        arg0.remove();
+    };
     imports.wbg.__wbg_resolve_4851785c9c5f573d = function(arg0) {
         const ret = Promise.resolve(arg0);
         return ret;
@@ -595,12 +608,12 @@ function __wbg_get_imports() {
         const ret = false;
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper1274 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 62, __wbg_adapter_26);
+    imports.wbg.__wbindgen_closure_wrapper2342 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 92, __wbg_adapter_26);
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper6025 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 130, __wbg_adapter_29);
+    imports.wbg.__wbindgen_closure_wrapper7193 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 161, __wbg_adapter_29);
         return ret;
     };
     imports.wbg.__wbindgen_debug_string = function(arg0, arg1) {
