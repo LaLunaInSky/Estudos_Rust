@@ -3,6 +3,38 @@ use leptos::{
     prelude::*
 };
 
+/// Shows progress toward a goal.
+#[component]
+fn ProgressBar(
+
+    /// The maximun value of the progress bar.
+    #[prop(default = 100)]
+    max: u16,
+
+    /// How much progress should be displayed.
+    #[prop(into)]
+    progress: Signal<i32>
+) -> impl IntoView {
+    view! {
+        <div
+            style="
+                display: flex; 
+                flex-direction: row; 
+                align-items: center; 
+                gap: 1em
+            "
+        >
+            <progress
+                max=max
+                value=progress
+            />
+            <p>
+                {progress}
+            </p>
+        </div>
+    }
+}
+
 #[component]
 fn App() -> impl IntoView {
     let (count, set_count) = signal(0);
@@ -48,19 +80,29 @@ fn App() -> impl IntoView {
             <strong>"Not reactive: "</strong>
             {count.get()}
         </p>
-        <progress
-            max="50"
-            value=count
+
+        // <progress
+        //     max="50"
+        //     value=count
+        // />
+        // <progress
+        //     max="50"
+        //     value=move || count.get() * 2
+        //     style="display: block"
+        // />
+        // <progress
+        //     max="50"
+        //     value=double_count
+        // />
+
+        <ProgressBar 
+            max=50 
+            progress=count
         />
-        <progress
-            max="50"
-            value=move || count.get() * 2
-            style="display: block"
+        <ProgressBar 
+            progress=Signal::derive(double_count)
         />
-        <progress
-            max="50"
-            value=double_count
-        />
+
         <p>
             "Double Count: "
             {double_count}
