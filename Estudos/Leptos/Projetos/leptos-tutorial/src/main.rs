@@ -7,6 +7,7 @@ use leptos::{
 fn App() -> impl IntoView {
     let (count, set_count) = signal(0);
     let double_count = move || count.get() * 2;
+    let html = "<p>This HTML will be injected.</p>";
 
     view! {
         <button
@@ -54,6 +55,7 @@ fn App() -> impl IntoView {
         <progress
             max="50"
             value=move || count.get() * 2
+            style="display: block"
         />
         <progress
             max="50"
@@ -63,6 +65,7 @@ fn App() -> impl IntoView {
             "Double Count: "
             {double_count}
         </p>
+        <div inner_html=html/>
     }
 }
 
