@@ -120,6 +120,7 @@ checksum = "0da45bc31171d8d6960122e222a67740df867c1dd53b4d51caa297084c185cab"
 name = "cap_3_6"
 version = "0.1.0"
 dependencies = [
+ "console_error_panic_hook",
  "leptos",
 ]
 
@@ -166,6 +167,16 @@ dependencies = [
  "serde",
  "toml",
  "winnow",
+]
+
+[[package]]
+name = "console_error_panic_hook"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a06aeb73f470f66dcdbf7223caeebb85984942f22f1adb2a088cf9668146bbbc"
+dependencies = [
+ "cfg-if",
+ "wasm-bindgen",
 ]
 
 [[package]]
