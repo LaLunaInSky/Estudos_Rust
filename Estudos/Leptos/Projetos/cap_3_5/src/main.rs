@@ -6,7 +6,7 @@ use leptos::{
 #[derive(Debug, Clone)]
 struct DatabaseEntry {
     key: String,
-    value: RWSignal<i32>,
+    value: RwSignal<i32>,
 }
 
 #[component]
@@ -60,5 +60,7 @@ fn App() -> impl IntoView {
 }
 
 fn main() {
+    console_error_panic_hook::set_once();
+
     mount_to_body(App);
 }
