@@ -4,6 +4,4 @@
         "component",
         "server"
     ],
-},
-
-"rust-analyzer.cargo.features": ["ssr"]
+}
