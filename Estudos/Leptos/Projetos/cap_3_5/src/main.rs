@@ -6,23 +6,23 @@ use leptos::{
 #[derive(Debug, Clone)]
 struct DatabaseEntry {
     key: String,
-    value: i32,
+    value: RWSignal<i32>,
 }
 
 #[component]
 fn App() -> impl IntoView {
-    let (data, set_data) = signal(vec![
+    let (data, _set_data) = signal(vec![
         DatabaseEntry {
             key: String::from("foo"),
-            value: 10,
+            value: RwSignal::new(10),
         },
         DatabaseEntry {
             key: String::from("bar"),
-            value: 20,
+            value: RwSignal::new(20),
         },
         DatabaseEntry {
             key: String::from("baz"),
-            value: 15,
+            value: RwSignal::new(15),
         },
     ]);
     
@@ -32,11 +32,15 @@ fn App() -> impl IntoView {
         </h1>
         <button
             on:click=move |_| {
-                set_data.update(|data| {
-                    for row in data {
-                        row.value *= 2;
-                    }
-                });
+                // set_data.update(|data| {
+                //     for row in data {
+                //         row.value *= 2;
+                //     }
+                // });
+
+                for row in &*data.read() {
+                    row.value.update(|value| *value *= 2);
+                }
             
                 leptos::logging::log!("{:?}", data.get());
             }
@@ -45,7 +49,7 @@ fn App() -> impl IntoView {
         </button>
         <For
             each=move || data.get()
-            key=|state| (state.key.clone(), state.value)
+            key=|state| state.key.clone()
             let(child)
         >
             <p>
