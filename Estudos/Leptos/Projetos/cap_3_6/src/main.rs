@@ -25,6 +25,12 @@ fn App() -> impl IntoView {
         set_name_02.set(value);
     };
 
+    // Example 3
+    let some_value = RwSignal::new(String::new());
+
+    // Example 4
+    let (value, set_value) = signal(0i32);
+
     view! {
         <div
             style="display: flex; flex-direction: column; align-items: center"
@@ -148,6 +154,63 @@ fn App() -> impl IntoView {
                         "Name is: " {name_02}
                     </p>
                 </div>
+            </div>
+            <div>
+                <h2>
+                    "Example 3"
+                </h2>
+                <textarea
+                    prop:value=move || some_value.get()
+                    on:input:target=move |ev| some_value.set(ev.target().value())
+                >
+                    {some_value}
+                </textarea>
+                <div>
+                    <h3>
+                        "Result"
+                    </h3>
+                    <p>
+                        "Write is: " {some_value}
+                    </p>
+                </div>
+            </div>
+            <div>
+                <h2>
+                    "Example 4"
+                </h2>
+                <select
+                    on:change:target=move |ev| {
+                        set_value.set(ev.target().value().parse().unwrap());
+                    }
+                    prop:value=move || value.get().to_string()
+                >
+                    <option
+                        value="0"
+                    >
+                        "0"
+                    </option>
+                    <option
+                        value="1"
+                    >
+                        "1"
+                    </option>
+                    <option
+                        value="2"
+                    >
+                        "2"
+                    </option>
+                </select>
+                <button
+                    on:click=move |_| set_value.update(|n| {
+                        if *n == 2 {
+                            *n = 0;
+                        } else {
+                            *n += 1;
+                        }
+                    })
+                >
+                    "Next Option"
+                </button>
             </div>
         </div>
     }
