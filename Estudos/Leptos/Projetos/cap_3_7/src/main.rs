@@ -8,9 +8,26 @@ fn App() -> impl IntoView {
     let is_odd = move || value.get() % 2 != 0;
 
     view! {
-        <h1>
-            "Cap_3_7 Leptos"
-        </h1>
+        <div
+            style="display: flex; flex-direction: column; align-items: center"
+        >
+            <h1>
+                "Cap_3_7 Leptos"
+            </h1>
+            <div>
+                <h2>
+                    "Example 1"
+                </h2>
+                <p>
+                    "The number " {value} " is "
+                    {move || if is_odd() {
+                        "Odd"
+                    } else {
+                        "Even"
+                    }}
+                </p>
+            </div>
+        </div>
     }
 }
 
