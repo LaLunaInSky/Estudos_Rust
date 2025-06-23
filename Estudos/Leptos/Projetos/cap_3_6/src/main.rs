@@ -1,13 +1,29 @@
 use leptos::{
     mount::mount_to_body,
-    prelude::*
+    prelude::*,
+    ev::SubmitEvent,
+    html
 };
 
 fn App() -> impl IntoView {
-    let (name, set_name) = signal(String::new());
+    // Example 1
+    let (name_01, set_name_01) = signal(String::from("Controlled"));
     let email = RwSignal::new(String::new());
     let favorite_color = RwSignal::new(String::from("red"));
     let spam_me = RwSignal::new(true);
+
+    // Example 2
+    let (name_02, set_name_02) = signal(String::from("Uncontrolled"));
+    let input_element: NodeRef<html::Input> = NodeRef::new();
+    let on_submit = move |ev: SubmitEvent| {
+        ev.prevent_default();
+    
+        let value = input_element.get()
+                                 .expect("<input> should be mounted")
+                                 .value();
+        
+        set_name_02.set(value);
+    };
 
     view! {
         <div
@@ -17,17 +33,20 @@ fn App() -> impl IntoView {
                 "Cap_3_6 Leptos"
             </h1>
             <div>
+                <h2>
+                    "Example 1"
+                </h2>
                 <label>
                     "Enter an your name: "
                     <input
                         type="text"
-                        
+
                         // on:input:target=move |ev| {
                         //     set_name.set(ev.target().value());
                         // }
                         // prop:value=name
 
-                        bind:value=(name, set_name)
+                        bind:value=(name_01, set_name_01)
                         style="display: block"
                     />
                 </label>
@@ -83,14 +102,14 @@ fn App() -> impl IntoView {
                     </label>
                 </fieldset>
                 <div>
-                    <h2>
+                    <h3>
                         "Results"
-                    </h2>
+                    </h3>
                     <p>
                         "Your favorite color is: " {favorite_color}
                     </p>
                     <p>
-                        "Name is: " {name}
+                        "Name is: " {name_01}
                     </p>
                     <p>
                         "Email is: " {email}
@@ -102,6 +121,32 @@ fn App() -> impl IntoView {
                             "You'll receive cool bonus content!"
                         </p>
                     </Show>
+                </div>
+            </div>
+            <div>
+                <h2>
+                    "Example 2"
+                </h2>
+                <form
+                    on:submit=on_submit
+                >
+                    <input 
+                        type="text"
+                        value=name_02
+                        node_ref=input_element
+                    />
+                    <input 
+                        type="submit"
+                        value="Submit"
+                    />
+                </form>
+                <div>
+                    <h3>
+                        "Result"
+                    </h3>
+                    <p>
+                        "Name is: " {name_02}
+                    </p>
                 </div>
             </div>
         </div>
