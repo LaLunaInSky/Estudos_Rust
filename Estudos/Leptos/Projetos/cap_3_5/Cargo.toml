@@ -16,6 +16,6 @@ rustflags = [
 
 [target.wasm32-unknown-unknown]
 rustflags = [
-   "--cfg",
-   "erase_components",
+  "--cfg",
+  "erase_components",
 ]
