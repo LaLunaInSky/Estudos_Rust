@@ -4,6 +4,9 @@ use leptos::{
 };
 
 fn App() -> impl IntoView {
+    let (value, set_value) = signal(0);
+    let is_odd = move || value.get() % 2 != 0;
+
     view! {
         <h1>
             "Cap_3_7 Leptos"
