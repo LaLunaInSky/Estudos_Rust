@@ -45,6 +45,9 @@ fn App() -> impl IntoView {
         "Small"
     };
 
+    // Example 5
+    let (value_05, _set_value_05) = signal(0);
+
     view! {
         <div
             style="display: flex; flex-direction: column; align-items: center"
@@ -91,6 +94,17 @@ fn App() -> impl IntoView {
                 <p>
                     {message_04}
                 </p>
+            </div>
+            <div>
+                <h2>
+                    "Example 5"
+                </h2>
+                <Show
+                    when=move || { value_05.get() > 5 }
+                    fallback=|| view! { <Small/> }
+                >
+                    <Big/>
+                </Show>
             </div>
         </div>
     }
