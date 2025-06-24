@@ -4,8 +4,36 @@ use leptos::{
 };
 
 fn App() -> impl IntoView {
-    let (value, set_value) = signal(0);
-    let is_odd = move || value.get() % 2 != 0;
+    // Example 1 with if
+    let (value_01, _set_value_01) = signal(0);
+    let is_odd_01 = move || value_01.get() % 2 != 0;
+
+    // Example 2 with Option<T>
+    let (value_02, _set_value_02) = signal(3);
+    let is_odd_02 = move || value_02.get() % 2 != 0;
+
+    let message_01 = move || {
+        if is_odd_02() {
+            Some("Ding ding ding!")
+        } else {
+            None
+        }
+    };
+
+    let message_02 = move || is_odd_02().then(|| "Ding ding ding!");
+
+    // Example 3 with match
+    let (value_03, _set_value_03) = signal(3);
+    let is_odd_03 = move || value_03.get() % 2 != 0;
+
+    let message_03 = move || {
+        match value_03.get() {
+            0 => "Zero",
+            1 => "One",
+            n if is_odd_03() => "Odd",
+            _ => "Even",
+        }
+    };
 
     view! {
         <div
@@ -16,15 +44,34 @@ fn App() -> impl IntoView {
             </h1>
             <div>
                 <h2>
-                    "Example 1"
+                    "Example 1 with if"
                 </h2>
                 <p>
-                    "The number " {value} " is "
-                    {move || if is_odd() {
+                    "The number " {value_01} " is "
+                    {move || if is_odd_01() {
                         "Odd"
                     } else {
                         "Even"
                     }}
+                </p>
+            </div>
+            <div>
+                <h2>
+                    "Example 2 with Option<T>"
+                </h2>
+                <p>
+                    {message_01}
+                </p>
+                <p>
+                    {message_02}
+                </p>
+            </div>
+            <div>
+                <h2>
+                    "Example 3 with match"
+                </h2>
+                <p>
+                    {message_03}
                 </p>
             </div>
         </div>
