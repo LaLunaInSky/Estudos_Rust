@@ -35,6 +35,16 @@ fn App() -> impl IntoView {
         }
     };
 
+    // Example 4
+    let (value_04, _set_value_04) = signal(2);
+    let message_04 = move || if value_04.get() > 5 {
+        // logging::log!("{}: rendering Big", value_04.get());
+        "Big"
+    } else {
+        // logging::log!("{}: rendering Small", value_04.get());
+        "Small"
+    };
+
     view! {
         <div
             style="display: flex; flex-direction: column; align-items: center"
@@ -72,6 +82,14 @@ fn App() -> impl IntoView {
                 </h2>
                 <p>
                     {message_03}
+                </p>
+            </div>
+            <div>
+                <h2>
+                    "Example 4"
+                </h2>
+                <p>
+                    {message_04}
                 </p>
             </div>
         </div>
