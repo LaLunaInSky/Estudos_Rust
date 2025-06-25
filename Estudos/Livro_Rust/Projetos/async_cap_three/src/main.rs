@@ -10,6 +10,18 @@ use std::{
     },
     thread
 };
+use trpl::Either;
+
+async fn timeout<F: Future>(
+    future_to_try: F,
+    max_time: Duration,
+) -> Result<F::Output, Duration> {
+
+    match trpl::race(future_to_try, trpl::sleep(max_time)).await {
+        Either::Left(output) => Ok(output),
+        Either::Right(_) => Err(max_time),
+    }
+}
 
 fn slow(
     name: &str,
@@ -192,5 +204,25 @@ fn main() {
             "'yield' version finished after {} seconds.",
             time.as_secs_f32()
         );
+    });
+
+    // Example 6
+    println!();
+
+    trpl::run(async {
+        let slow_var_01 = async {
+            trpl::sleep(Duration::from_millis(100)).await;
+            "I finished!"
+        };
+
+        match timeout(slow_var_01, Duration::from_millis(10)).await {
+            Ok(message) => println!("Succeeded with '{message}'"),
+            Err(duration) => {
+                println!(
+                    "Failed after {} seconds",
+                    duration.as_secs()
+                );
+            }
+        }
     });
 }
