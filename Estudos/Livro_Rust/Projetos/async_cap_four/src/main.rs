@@ -1,6 +1,7 @@
 use std::{
     process::Command,
 };
+use trpl::StreamExt;
 
 fn clean_terminal_linux() {
     Command::new("clear").status().unwrap();
@@ -15,7 +16,7 @@ fn main() {
         let mut stream = trpl::stream_from_iter(iter);
         
         while let Some(value) = stream.next().await {
-            pritnln!("The value was:  {value}");
+            println!("The value was:  {value}");
         }
     });
 }
