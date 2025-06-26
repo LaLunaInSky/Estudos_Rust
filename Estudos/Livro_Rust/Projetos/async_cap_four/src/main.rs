@@ -1,5 +1,7 @@
 use std::{
     process::Command,
+    pin::pin,
+    time::Duration
 };
 use trpl::{
     StreamExt,
@@ -66,5 +68,20 @@ fn main() {
        while let Some(message) = messages.next().await {
            println!("{message}");
        }
+    });
+    
+    // Example 4
+    println!();
+    
+    trpl::run(async {
+       let mut messages = pin!(get_message()
+            .timeout(Duration::from_millis(200)));
+      
+       while let Some(result) = messages.next().await {
+           match result {
+               Ok(message) => println!("{message}"),
+               Err(reason) => eprintln!("Problem: {reason:?}"),
+           }
+       } 
     });
 }
