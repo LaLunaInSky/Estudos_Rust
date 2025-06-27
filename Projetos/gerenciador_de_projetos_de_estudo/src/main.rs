@@ -7,5 +7,7 @@ fn clean_terminal_linux() {
 fn main() {
     clean_terminal_linux();
 
-    println!("Hello, world!");
+    println!("- Gerenciador De Projetos De Estudo Rust -");
+    println!("             Por LaLunaInSky              ");
+    println!();
 }
