@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Read};
 
 fn descrição_do_exercícios() {
     println!("Descrição do exercício 001:\n");
@@ -28,12 +28,16 @@ fn obter_a_entrada_de_um_número_inteiro(indice_da_chamada_do_input: i32) {
         "Digite o {indice_da_chamada_do_input}º número inteiro: "
     );
 
-    let input_do_usuário = String::from("       g        ");
+    let mut número_digitado = String::new();
 
-    let número_inteiro_digitado: i32 = input_do_usuário.trim().parse::<i32>().unwrap();
+    io::stdin().read_line(&mut número_digitado).unwrap();
 
-    println!("{input_do_usuário}");
-    println!("{número_inteiro_digitado}");
+    match número_digitado.parse::<i32>() {
+        Ok(n) => println!("Parsed value: {}", n),
+        Err(e) => println!("Error: {}", e),
+    }
+
+    println!("{número_digitado}");
 }
 
 #[cfg(test)]
