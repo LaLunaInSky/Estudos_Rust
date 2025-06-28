@@ -21,8 +21,9 @@ fn clean_terminal_linux() {
 fn main() {
     clean_terminal_linux();
 
-    println!("- Gerenciador De Projetos De Estudo Rust -");
-    println!("              Por LaLunaInSky              \n");
+    let cabeçalho_do_programa: String = String::from("- Gerenciador De Projetos De Estudo Rust -\n             Por LaLunaInSky               \n");
 
-    exercicios::ex_001::rodar_o_exercício();
+    println!("{}", cabeçalho_do_programa);
+
+    exercicios::ex_001::rodar_o_exercício(&cabeçalho_do_programa);
 }

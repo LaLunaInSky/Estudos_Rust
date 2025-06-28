@@ -1,43 +1,86 @@
-use std::io::{self, Read};
+use std::{
+    io,
+    process::Command
+};
+
+fn clean_terminal_linux() {
+    Command::new("clear").status().unwrap();
+}
 
 fn descrição_do_exercícios() {
-    println!("Descrição do exercício 001:\n");
+    println!("Descrição do exercício 001:");
     println!(
         "Um programa que lê dois números inteiro e\nmostra a soma entre os mesmos."
     );
 }
 
-pub fn rodar_o_exercício() {
+pub fn rodar_o_exercício(cabeçalho_do_programa: &String) {
     descrição_do_exercícios();
 
     println!();
 
+    let mut números_digitados: Vec<i32> = vec![];
+
     for indice in 1..3 {
-        obter_a_entrada_de_um_número_inteiro(indice);
+        números_digitados.push(obter_a_entrada_de_um_número_inteiro(indice, &cabeçalho_do_programa));
     }
 
-    println!();
+    números_digitados.push(
+        soma_de_dois_números_inteiros(números_digitados[0], números_digitados[1])
+    );
+
+    println!(
+        "A soma dos números {} + {} é igual a {}!",
+        números_digitados[0], números_digitados[1], números_digitados[2]
+    );
+
+    println!("\nVoltando para o menu de exercício...");
 }
 
 fn soma_de_dois_números_inteiros(primeiro_número: i32, segundo_número: i32) -> i32 {
     primeiro_número + segundo_número
 }
 
-fn obter_a_entrada_de_um_número_inteiro(indice_da_chamada_do_input: i32) {
-    println!(
-        "Digite o {indice_da_chamada_do_input}º número inteiro: "
-    );
+fn obter_a_entrada_de_um_número_inteiro(
+    indice_da_chamada_do_input: i32,
+    cabeçalho_do_programa: &String
+) -> i32 {
+    loop {
+        println!(
+            "Digite o {indice_da_chamada_do_input}º número inteiro: "
+        );
 
-    let mut número_digitado = String::new();
+        let mut input = String::new();
 
-    io::stdin().read_line(&mut número_digitado).unwrap();
+        match io::stdin().read_line(&mut input) {
+            Ok(_) => {
+                match input.trim().parse::<i32>() {
+                    Ok(number) => {
+                        clean_terminal_linux();
 
-    match número_digitado.parse::<i32>() {
-        Ok(n) => println!("Parsed value: {}", n),
-        Err(e) => println!("Error: {}", e),
+                        println!("{}", cabeçalho_do_programa);
+
+                        descrição_do_exercícios();
+
+                        println!("\nNúmero Digitado com Sucesso!\n");
+                        return number;
+                    }
+                    Err(_) => {
+                        clean_terminal_linux();
+
+                        println!("{}", cabeçalho_do_programa);
+
+                        descrição_do_exercícios();
+
+                        println!("\nErro! Digite novamente um número válido!\n")
+                    }
+                }
+            },
+            Err(_) => println!("\nErro! Digite novamente um número válido!\n"),
+        }
+
+        
     }
-
-    println!("{número_digitado}");
 }
 
 #[cfg(test)]
