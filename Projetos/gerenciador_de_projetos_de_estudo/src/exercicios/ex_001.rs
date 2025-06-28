@@ -1,3 +1,5 @@
+use std::io;
+
 fn descrição_do_exercícios() {
     println!("Descrição do exercício 001:\n");
     println!(
@@ -10,7 +12,11 @@ pub fn rodar_o_exercício() {
 
     println!();
 
-    obter_a_entrada_de_um_número_inteiro(1);
+    for indice in 1..3 {
+        obter_a_entrada_de_um_número_inteiro(indice);
+    }
+
+    println!();
 }
 
 fn soma_de_dois_números_inteiros(primeiro_número: i32, segundo_número: i32) -> i32 {
@@ -21,6 +27,13 @@ fn obter_a_entrada_de_um_número_inteiro(indice_da_chamada_do_input: i32) {
     println!(
         "Digite o {indice_da_chamada_do_input}º número inteiro: "
     );
+
+    let input_do_usuário = String::from("       g        ");
+
+    let número_inteiro_digitado: i32 = input_do_usuário.trim().parse::<i32>().unwrap();
+
+    println!("{input_do_usuário}");
+    println!("{número_inteiro_digitado}");
 }
 
 #[cfg(test)]
