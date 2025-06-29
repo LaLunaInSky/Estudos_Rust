@@ -59,7 +59,9 @@ fn App() -> impl IntoView {
                 <h2>
                     "Example 1 with if"
                 </h2>
-                <p>
+                <p
+                    style="text-align: center"
+                >
                     "The number " {value_01} " is "
                     {move || if is_odd_01() {
                         "Odd"
@@ -72,10 +74,14 @@ fn App() -> impl IntoView {
                 <h2>
                     "Example 2 with Option<T>"
                 </h2>
-                <p>
+                <p
+                    style="text-align: center"
+                >
                     {message_01}
                 </p>
-                <p>
+                <p
+                    style="text-align: center"
+                >
                     {message_02}
                 </p>
             </div>
@@ -83,7 +89,9 @@ fn App() -> impl IntoView {
                 <h2>
                     "Example 3 with match"
                 </h2>
-                <p>
+                <p
+                    style="text-align: center"
+                >
                     {message_03}
                 </p>
             </div>
@@ -91,7 +99,9 @@ fn App() -> impl IntoView {
                 <h2>
                     "Example 4"
                 </h2>
-                <p>
+                <p
+                    style="text-align: center"
+                >
                     {message_04}
                 </p>
             </div>
@@ -101,9 +111,19 @@ fn App() -> impl IntoView {
                 </h2>
                 <Show
                     when=move || { value_05.get() > 5 }
-                    fallback=|| view! { <Small/> }
+                    fallback=move || view! { 
+                        <p
+                            style="text-align: center"
+                        >
+                            {value_05}: rendering Small
+                        </p> 
+                    }
                 >
-                    <Big/>
+                    <p
+                        style="text-align: center"
+                    >
+                        {value_05}: rendering Big
+                    </p>
                 </Show>
             </div>
         </div>
