@@ -24,12 +24,16 @@ fn menu_de_opções_de_exercícios(cabeçalho_do_programa: &String) {
             print!("{exercicio} ");
         }
     
-        println!("\n\nQual exercício você escolhe (coloque apenas o número do exercício)? ");
+        println!("\n\n(Escreva SAIR para fechar o programa)\n'Coloque APENAS o número do exercício'\nQual exercício você escolhe?");
     
         let mut input = String::new();
     
         match io::stdin().read_line(&mut input) {
             Ok(_) => {
+                if input.trim().to_lowercase() == "sair" {
+                    break;
+                }
+
                 match input.trim().parse::<u32>() {
                     Ok(number) => {
                         if number > 0 && number <= tamanho_da_lista_de_exercícios {

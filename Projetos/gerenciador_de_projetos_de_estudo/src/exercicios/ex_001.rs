@@ -1,6 +1,8 @@
 use std::{
     io,
-    process::Command
+    process::Command,
+    thread,
+    time::Duration
 };
 
 fn clean_terminal_linux() {
@@ -34,7 +36,13 @@ pub fn rodar_o_exercício(cabeçalho_do_programa: &String) {
         números_digitados[0], números_digitados[1], números_digitados[2]
     );
 
+    thread::sleep(Duration::from_millis(2000));
+
     println!("\nVoltando para o menu de exercício...");
+
+    thread::sleep(Duration::from_millis(3000));
+
+    clean_terminal_linux();
 }
 
 fn soma_de_dois_números_inteiros(primeiro_número: i32, segundo_número: i32) -> i32 {
