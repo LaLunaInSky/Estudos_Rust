@@ -17,6 +17,8 @@ fn descrição_do_exercícios() {
 }
 
 pub fn rodar_o_exercício(cabeçalho_do_programa: &String) {
+    println!("{}", cabeçalho_do_programa);
+
     descrição_do_exercícios();
 
     println!();

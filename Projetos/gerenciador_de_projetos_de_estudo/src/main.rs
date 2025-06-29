@@ -7,24 +7,33 @@ use std::{
 
 mod exercicios;
 
+fn link_dos_exercícios(número_do_exercício: u32, cabeçalho_do_programa: &String) {
+    if número_do_exercício == 2 {
+        exercicios::ex_002::rodar_o_exercício(&cabeçalho_do_programa);
+    } else {
+        exercicios::ex_001::rodar_o_exercício(&cabeçalho_do_programa);
+    }
+}
+
 fn menu_de_opções_de_exercícios(cabeçalho_do_programa: &String) {
     loop {
-        let todos_os_exercícios = vec![
-            String::from("ex_001")
+        let nome_de_todos_os_exercícios = vec![
+            String::from("ex_001"),
+            String::from("ex_002")
         ];
 
-        let tamanho_da_lista_de_exercícios = todos_os_exercícios.len().to_string();
+        let tamanho_da_lista_de_exercícios = nome_de_todos_os_exercícios.len().to_string();
         let tamanho_da_lista_de_exercícios: u32 = tamanho_da_lista_de_exercícios.parse().unwrap();
 
         println!("{}", cabeçalho_do_programa);
         
         println!("          Lista de Exercícios\n");
         
-        for exercicio in todos_os_exercícios {
-            print!("{exercicio} ");
+        for exercicio in nome_de_todos_os_exercícios {
+            print!("{exercicio}   ");
         }
     
-        println!("\n\n(Escreva SAIR para fechar o programa)\n'Coloque APENAS o número do exercício'\nQual exercício você escolhe?");
+        println!("\n\n(Escreva SAIR para fechar o programa)\n'Coloque APENAS o número do exercício'\n\nQual exercício você escolhe?");
     
         let mut input = String::new();
     
@@ -47,9 +56,9 @@ fn menu_de_opções_de_exercícios(cabeçalho_do_programa: &String) {
 
                             clean_terminal_linux();
 
-                            println!("{}", cabeçalho_do_programa);
-
-                            exercicios::ex_001::rodar_o_exercício(&cabeçalho_do_programa);                            
+                            // Ficar de olho neste trecho
+                            link_dos_exercícios(number, cabeçalho_do_programa);
+                            
                         } else {
                             clean_terminal_linux();
 
@@ -90,7 +99,9 @@ fn main() {
 
     let cabeçalho_do_programa: String = String::from("- Gerenciador De Projetos De Estudo Rust -\n             Por LaLunaInSky               \n");
 
+    // Para o programa final
     menu_de_opções_de_exercícios(&cabeçalho_do_programa);
 
-    // exercicios::ex_001::rodar_o_exercício(&cabeçalho_do_programa);
+    // Para Desenolvimento do exercício
+    // exercicios::ex_002::rodar_o_exercício(&cabeçalho_do_programa);
 }
