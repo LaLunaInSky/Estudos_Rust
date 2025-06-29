@@ -1,6 +1,8 @@
 use std::{
     io,
-    process::Command
+    process::Command,
+    thread,
+    time::Duration
 };
 
 mod exercicios;
@@ -11,6 +13,9 @@ fn menu_de_opções_de_exercícios(cabeçalho_do_programa: &String) {
             String::from("ex_001")
         ];
 
+        let tamanho_da_lista_de_exercícios = todos_os_exercícios.len().to_string();
+        let tamanho_da_lista_de_exercícios: u32 = tamanho_da_lista_de_exercícios.parse().unwrap();
+
         println!("{}", cabeçalho_do_programa);
         
         println!("          Lista de Exercícios\n");
@@ -19,15 +24,49 @@ fn menu_de_opções_de_exercícios(cabeçalho_do_programa: &String) {
             print!("{exercicio} ");
         }
     
-        println!("\nQual exercício você escolhe (coloque apenas o número do exercício)? ");
+        println!("\n\nQual exercício você escolhe (coloque apenas o número do exercício)? ");
     
         let mut input = String::new();
     
         match io::stdin().read_line(&mut input) {
             Ok(_) => {
                 match input.trim().parse::<u32>() {
-                    Ok(number) => println!("Number is {}", number),
+                    Ok(number) => {
+                        if number > 0 && number <= tamanho_da_lista_de_exercícios {
+                            clean_terminal_linux();
+                            
+                            println!("{}", cabeçalho_do_programa);
+                            
+                            println!("\nAbrindo o exercício {}...\n", number);
+
+                            thread::sleep(Duration::from_millis(1000));
+
+                            clean_terminal_linux();
+
+                            println!("{}", cabeçalho_do_programa);
+
+                            exercicios::ex_001::rodar_o_exercício(&cabeçalho_do_programa);                            
+                        } else {
+                            clean_terminal_linux();
+
+                            println!("{}", cabeçalho_do_programa);
+                            
+                            println!("\nErro! Exercício {} não encontrado!\n", number);
+
+                            thread::sleep(Duration::from_millis(1200));
+
+                            clean_terminal_linux();
+                        }
+                    }
                     Err(_) => {
+                        clean_terminal_linux();
+
+                        println!("{}", cabeçalho_do_programa);
+                            
+                        println!("\nErro! Valor inválido digitado!\n");
+
+                        thread::sleep(Duration::from_millis(2000));
+
                         clean_terminal_linux();
                     }
                 }
