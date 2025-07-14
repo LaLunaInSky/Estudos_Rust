@@ -1,0 +1,1 @@
+/home/luna/Documentos/Repositório/Estudos/Estudos_Rust/Estudos/Livro_Rust/Projetos/cap_18/cap_18_2/target/debug/cap_18_2: /home/luna/Documentos/Repositório/Estudos/Estudos_Rust/Estudos/Livro_Rust/Projetos/cap_18/cap_18_2/src/lib.rs /home/luna/Documentos/Repositório/Estudos/Estudos_Rust/Estudos/Livro_Rust/Projetos/cap_18/cap_18_2/src/main.rs
