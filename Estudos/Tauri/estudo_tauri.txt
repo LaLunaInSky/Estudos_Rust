@@ -2,4 +2,4 @@
 https://tauri.app/start/
 
 /* Capítulo Parado */
-https://tauri.app/concept/inter-process-communication/brownfield/
+https://tauri.app/security/
