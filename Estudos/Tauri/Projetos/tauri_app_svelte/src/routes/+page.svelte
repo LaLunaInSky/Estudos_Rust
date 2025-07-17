@@ -1,5 +1,6 @@
 <script lang="ts">
   import { invoke } from "@tauri-apps/api/core";
+  import "../app.css";
 
   let name = $state("");
   let greetMsg = $state("");
@@ -11,21 +12,56 @@
   }
 </script>
 
-<main class="container">
-  <h1>Welcome to Tauri + Svelte</h1>
+<main 
+  class="
+    flex flex-col items-center m-0 justify-center h-svh
+  "
+>
+  <h1
+    class="text-4xl"
+  >
+    Welcome to Tauri + Svelte
+  </h1>
 
-  <div class="row">
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo vite" alt="Vite Logo" />
+  <div 
+    class="row"
+  >
+    <a 
+      href="https://vitejs.dev" 
+      target="_blank"
+    >
+      <img 
+        src="/vite.svg" 
+        class="logo vite" 
+        alt="Vite Logo" 
+      />
     </a>
-    <a href="https://tauri.app" target="_blank">
-      <img src="/tauri.svg" class="logo tauri" alt="Tauri Logo" />
+    <a 
+      href="https://tauri.app" 
+      target="_blank"
+    >
+      <img 
+        src="/tauri.svg" 
+        class="logo tauri" 
+        alt="Tauri Logo" 
+      />
     </a>
-    <a href="https://kit.svelte.dev" target="_blank">
-      <img src="/svelte.svg" class="logo svelte-kit" alt="SvelteKit Logo" />
+    <a 
+      href="https://kit.svelte.dev" 
+      target="_blank"
+    >
+      <img 
+        src="/svelte.svg" 
+        class="logo svelte-kit" 
+        alt="SvelteKit Logo" 
+      />
     </a>
   </div>
-  <p>Click on the Tauri, Vite, and SvelteKit logos to learn more.</p>
+  <p
+    class="mb-4 text-sm font-extralight"
+  >
+    Click on the Tauri, Vite, and SvelteKit logos to learn more.
+  </p>
 
   <form class="row" onsubmit={greet}>
     <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
@@ -34,7 +70,9 @@
   <p>{greetMsg}</p>
 </main>
 
-<style>
+<style lang="postcss">
+@reference "tailwindcss";
+
 .logo.vite:hover {
   filter: drop-shadow(0 0 2em #747bff);
 }
@@ -57,15 +95,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
-
-.container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
 }
 
 .logo {
