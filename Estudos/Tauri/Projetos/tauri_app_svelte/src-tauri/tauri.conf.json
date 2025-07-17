@@ -1,18 +1,18 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tauri_app_01",
+  "productName": "tauri_app_svelte",
   "version": "0.1.0",
-  "identifier": "tauri_app_01.lalunainsky",
+  "identifier": "tauri_app_svelte.lalunainsky",
   "build": {
     "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:5173",
+    "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
+    "frontendDist": "../build"
   },
   "app": {
     "windows": [
       {
-        "title": "tauri_app_01",
+        "title": "tauri_app_svelte",
         "width": 800,
         "height": 600
       }
