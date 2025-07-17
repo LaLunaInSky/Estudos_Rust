@@ -1,2 +1,0 @@
-/* Principal */
-https://pt-br.react.dev/reference/react
