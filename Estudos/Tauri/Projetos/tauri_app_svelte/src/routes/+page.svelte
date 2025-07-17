@@ -14,7 +14,7 @@
 
 <main 
   class="
-    flex flex-col items-center m-0 justify-center h-svh
+    flex flex-col items-center m-0 justify-center h-svh bg-gray-700 *:text-neutral-100 *:cursor-default *:select-none
   "
 >
   <h1
@@ -63,11 +63,25 @@
     Click on the Tauri, Vite, and SvelteKit logos to learn more.
   </p>
 
-  <form class="row" onsubmit={greet}>
-    <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
-    <button type="submit">Greet</button>
+  <form 
+    class="row" 
+    onsubmit={greet}
+  >
+    <input 
+      id="greet-input" 
+      placeholder="Enter a name..." 
+      bind:value={name} 
+    />
+    <button 
+      type="submit"
+    >
+      Greet
+    </button>
   </form>
-  <p>{greetMsg}</p>
+  
+  <p>
+    {greetMsg}
+  </p>
 </main>
 
 <style lang="postcss">
