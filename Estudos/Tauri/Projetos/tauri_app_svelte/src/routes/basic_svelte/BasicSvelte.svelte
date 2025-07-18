@@ -10,6 +10,8 @@
     import Each from "./components/Each.svelte";
     import EachEmoji from "./components/EachEmoji.svelte";
     import PointerMove from "./components/PointerMove.svelte";
+    import Capture from "./components/Capture.svelte";
+    import StepperResult from "./components/StepperResult.svelte";
 </script>
 
 <div
@@ -49,4 +51,10 @@
 
     <Separador />
     <PointerMove />
+
+    <Separador />
+    <Capture />
+
+    <Separador />
+    <StepperResult />
 </div>
