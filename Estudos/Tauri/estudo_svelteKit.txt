@@ -5,4 +5,4 @@ https://svelte.dev/docs/kit/introduction
 https://svelte.dev/docs/kit/creating-a-project
 
 /* Capítulo Tutorial Parado */
-https://svelte.dev/tutorial/kit/params
+https://svelte.dev/tutorial/kit/page-data

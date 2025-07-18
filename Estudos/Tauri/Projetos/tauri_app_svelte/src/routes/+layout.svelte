@@ -5,6 +5,12 @@
 
     let name = 'Svelte';
     let src = "/svelte.svg";
+
+    let páginas = [
+        {name: "home", link: "/"},
+        {name: "about", link: "/about"},
+        {name: "blog", link: "/blog"}
+    ]
 </script>
 
 <header
@@ -32,6 +38,17 @@
             "
         >
     </div>
+    <nav
+        class="
+            flex flex-col gap-2 ml-2 uppercase *:font-bold *:text-neutral-200 *:hover:text-indigo-900
+        "
+    >
+        {#each páginas as página }
+            <a href={página.link}>
+                {página.name}
+            </a>
+        {/each}
+    </nav>
 </header>
 <main
     class="
