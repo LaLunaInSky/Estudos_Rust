@@ -45,4 +45,6 @@
 
     <Separador />
     <EachEmoji />
+
+    <Separador />
 </div>
