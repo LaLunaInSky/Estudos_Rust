@@ -3,6 +3,7 @@
 >
     import "../app.css";
     import BasicSvelte from "./basic_svelte/BasicSvelte.svelte";
+    import BasicSvelteKit from "./basic_sveltekit/BasicSvelteKit.svelte";
 
     let name = 'Svelte';
     let src = "/svelte.svg";
@@ -38,7 +39,12 @@
             flex flex-wrap gap-4
         "
     >
-        <BasicSvelte />
+        <div>
+            <BasicSvelte />
+        </div>
+        <div>
+            <BasicSvelteKit />
+        </div>
     </div>
 </main>
 
