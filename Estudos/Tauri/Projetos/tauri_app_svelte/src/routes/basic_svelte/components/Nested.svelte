@@ -1,7 +1,7 @@
 <script lang="ts">
     import { invoke } from "@tauri-apps/api/core";
 
-    let mensagem = "";
+    let mensagem = $state("");
     let { answer = "a mistery" } = $props();
 
     async function get_mensagem() {
@@ -14,9 +14,9 @@
 
 <p
     class="
-        mt-5 text-slate-950 font-black
+        mt-5 text-slate-950 font-black text-center
     "
 >
-    {mensagem}
+    {mensagem} <br>
     {answer}
 </p>
