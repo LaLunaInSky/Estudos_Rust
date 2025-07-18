@@ -2,6 +2,7 @@
     lang="ts"
 >
     import Separador from "./components/Separador.svelte";
+    import NavPage from "./components/NavPage.svelte";
 </script>
 
 <div
@@ -18,4 +19,5 @@
     </h2>
 
     <Separador />
+    <NavPage />
 </div>
