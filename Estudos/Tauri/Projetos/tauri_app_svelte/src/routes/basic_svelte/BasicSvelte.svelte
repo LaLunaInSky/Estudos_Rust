@@ -8,6 +8,7 @@
     import CountLoop from "./components/CountLoop.svelte";
     import Separador from "./components/Separador.svelte";
     import Each from "./components/Each.svelte";
+    import EachEmoji from "./components/EachEmoji.svelte";
 </script>
 
 <div
@@ -41,4 +42,7 @@
 
     <Separador />
     <Each />
+
+    <Separador />
+    <EachEmoji />
 </div>
