@@ -1,8 +1,11 @@
-<script lang="ts">
+<script 
+    lang="ts"
+>
     import "../app.css";
     import Nested from "./components/Nested.svelte";
     import Counted from "./components/Counted.svelte";
     import Number from "./components/Number.svelte";
+    import Interval from "./components/Interval.svelte";
 
     let name = 'Svelte';
     let src = "/svelte.svg";
@@ -41,9 +44,12 @@
         <Nested />
         <Counted />
         <Number />
+        <Interval />
     </div>
 </main>
 
-<style lang="postcss">
+<style 
+    lang="postcss"
+>
     @reference "tailwindcss";
 </style>
