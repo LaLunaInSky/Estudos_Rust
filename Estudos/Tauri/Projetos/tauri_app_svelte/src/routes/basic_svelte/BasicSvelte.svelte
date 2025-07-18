@@ -9,6 +9,7 @@
     import Separador from "./components/Separador.svelte";
     import Each from "./components/Each.svelte";
     import EachEmoji from "./components/EachEmoji.svelte";
+    import PointerMove from "./components/PointerMove.svelte";
 </script>
 
 <div
@@ -47,4 +48,5 @@
     <EachEmoji />
 
     <Separador />
+    <PointerMove />
 </div>
