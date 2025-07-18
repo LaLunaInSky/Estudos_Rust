@@ -5,4 +5,4 @@ https://svelte.dev/docs/svelte/overview
 https://svelte.dev/docs/svelte/getting-started
 
 /* Capítulo Do Tutorial Parado */
-https://svelte.dev/tutorial/svelte/each-blocks
+https://svelte.dev/tutorial/svelte/keyed-each-blocks

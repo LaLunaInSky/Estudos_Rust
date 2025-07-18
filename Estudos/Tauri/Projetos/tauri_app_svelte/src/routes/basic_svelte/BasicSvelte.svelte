@@ -7,6 +7,7 @@
     import Interval from "./components/Interval.svelte";
     import CountLoop from "./components/CountLoop.svelte";
     import Separador from "./components/Separador.svelte";
+    import Each from "./components/Each.svelte";
 </script>
 
 <div
@@ -37,4 +38,7 @@
 
     <Separador />
     <CountLoop />
+
+    <Separador />
+    <Each />
 </div>

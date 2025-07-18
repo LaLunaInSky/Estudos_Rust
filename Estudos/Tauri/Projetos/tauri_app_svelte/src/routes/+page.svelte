@@ -10,7 +10,7 @@
 
 <main
     class="
-        bg-gray-700 h-svh flex flex-col justify-center items-center *:select-none
+        bg-gray-700 py-10 flex flex-col justify-center items-center  *:select-none
     "
 >
     <div
