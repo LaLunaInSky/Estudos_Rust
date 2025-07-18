@@ -1,4 +1,4 @@
-/* Principal*/
+/* Principal */
 https://tauri.app/start/
 
 /* Capítulo Parado */
