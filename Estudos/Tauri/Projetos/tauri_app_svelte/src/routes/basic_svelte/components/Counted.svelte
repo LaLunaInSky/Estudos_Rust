@@ -19,7 +19,7 @@
 
 <div
     class="
-        flex justify-center items-center flex-col border-2 py-3 px-4 rounded-lg border-slate-500/50 bg-slate-800/80 backdrop-blur-2xl mt-2
+        flex justify-center items-center flex-col border-2 py-3 px-4 rounded-lg border-slate-500/50 bg-slate-700/70 backdrop-blur-2xl mt-2
     "
 >
     <p

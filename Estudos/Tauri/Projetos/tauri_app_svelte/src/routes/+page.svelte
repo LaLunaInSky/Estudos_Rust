@@ -2,10 +2,7 @@
     lang="ts"
 >
     import "../app.css";
-    import Nested from "./components/Nested.svelte";
-    import Counted from "./components/Counted.svelte";
-    import Number from "./components/Number.svelte";
-    import Interval from "./components/Interval.svelte";
+    import BasicSvelte from "./basic_svelte/BasicSvelte.svelte";
 
     let name = 'Svelte';
     let src = "/svelte.svg";
@@ -18,7 +15,7 @@
 >
     <div
         class="
-            flex 
+            flex mb-3 
         "
     >
         <h1
@@ -38,13 +35,10 @@
     </div>
     <div
         class="
-            flex flex-col justify-center items-center
+            flex flex-wrap gap-4
         "
     >
-        <Nested />
-        <Counted />
-        <Number />
-        <Interval />
+        <BasicSvelte />
     </div>
 </main>
 

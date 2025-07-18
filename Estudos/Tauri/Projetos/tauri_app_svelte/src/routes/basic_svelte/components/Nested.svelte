@@ -2,6 +2,7 @@
     import { invoke } from "@tauri-apps/api/core";
 
     let mensagem = "";
+    let { answer = "a mistery" } = $props();
 
     async function get_mensagem() {
         mensagem = await invoke("my_custom_command_2", { your_name: "Luna" });
@@ -17,4 +18,5 @@
     "
 >
     {mensagem}
+    {answer}
 </p>
