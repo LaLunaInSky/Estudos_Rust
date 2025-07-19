@@ -11,7 +11,7 @@
 >
     <h1
         class="
-            text-2xl text-neutral-200 font-bold
+            text-2xl text-neutral-200 font-bold text-center
         "
     >
         Page Blog!

@@ -15,7 +15,7 @@
 
 <header
     class="
-        min-h-svh max-h-full bg-slate-50/30 w-60 pt-2
+        h-svh bg-slate-50/30 w-60 pt-2 fixed
     "
 >
     <div
@@ -52,7 +52,7 @@
 </header>
 <main
     class="
-        w-full py-10 flex flex-col justify-center items-center  *:select-none
+        w-full py-10 flex flex-col justify-center items-center  *:select-none ml-60
     "
 >
     {@render children()}
