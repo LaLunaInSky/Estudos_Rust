@@ -69,4 +69,48 @@ fn main() {
         }
 
     });
+
+    // Using for 
+    println!();
+
+    let v_01 = vec!["a", "b", "c"];
+
+    for (index, value) in v_01.iter().enumerate() {
+        sleep(Duration::from_millis(1000));
+
+        println!(
+            "{} is at index {}",
+            value, index
+        );
+    }
+
+    // Using let
+    println!();
+
+    let x_01 = 5;
+
+    let (x_02, y_01, z_01) = (1, 2, 3);
+
+    println!(
+        "x_01 = {}\nx_02 = {}\ny_01 = {}\nz_01 = {}",
+        x_01, x_02, y_01, z_01
+    );
+
+    // Function Parameters
+    println!();
+
+    fn foo(_x: i32) {
+        // code goes here
+    }
+
+    let point_01 = (3, 5);
+
+    print_coordinates(&point_01);
+}
+
+fn print_coordinates(&(x, y): &(i32, i32)) {
+    println!(
+        "Current location: ({}, {})",
+        x, y
+    );
 }
