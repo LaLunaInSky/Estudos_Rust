@@ -114,6 +114,30 @@ fn main() {
             );
         }
     }
+
+    // Destructuring Nested Structs and Enums
+    println!();
+
+    let msg_02 = Message_02::ChangeColor(Color::Hsv(0, 160, 255));
+
+    match msg_02 {
+        Message_02::ChangeColor(Color::Rgb(r, g, b)) => {
+            println!(
+                "Change color to red {r}, green {g}, and blue {b}"
+            );
+        }
+        Message_02::ChangeColor(Color::Hsv(h, s, v)) => {
+            println!(
+                "Change color to hue {h}, saturation {s}, value {v}"
+            );
+        }
+        _ => (),
+    }
+
+    // Destructuring Structs and Tuples
+    println!();
+
+    let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
 }
 
 // Destructuring Structs
@@ -135,4 +159,17 @@ enum Message {
         i32,
         i32
     ),
+}
+
+// Destructuring Nested Structs and Enums
+enum Color {
+    Rgb(i32, i32, i32),
+    Hsv(i32, i32, i32),
+}
+
+enum Message_02 {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(Color),
 }
