@@ -174,6 +174,9 @@ fn main() {
             );
         }
     }
+
+    // Unused variable by starting its name with _
+    println!();
 }
 
 // Destructuring Structs
