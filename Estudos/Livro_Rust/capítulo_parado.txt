@@ -7,4 +7,4 @@ https://doc-rust--lang-org.translate.goog/book/ch17-05-traits-for-async.html?_x_
 /////
 https://doc-rust--lang-org.translate.goog/book/ch19-03-pattern-syntax.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
 
-* Desestruturando Estruturas e Enumerações Aninhadas *
+* Uma variável não utilizada cujo nome começa com_ *

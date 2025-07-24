@@ -138,6 +138,42 @@ fn main() {
     println!();
 
     let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
+
+    // Entire value with _
+    foo(3, 4);
+
+    // Parts of a value with a Nested _
+    // Example 1
+    println!();
+
+    let mut setting_value_01 = Some(5);
+    let new_setting_value = Some(10);
+
+    match (setting_value_01, new_setting_value) {
+        (Some(_), Some(_)) => {
+            println!(
+                "Can't overwrite an existing customized value"
+            );
+        }
+        _ => {
+            setting_value_01 = new_setting_value;
+        }
+    }
+
+    println!("setting is {setting_value_01:?}");
+
+    // Example 2
+    println!();
+
+    let numbers_01 = (2, 4, 8, 16, 32);
+
+    match numbers_01 {
+        (first, _, third, _, fifth) => {
+            println!(
+                "Some numbers: {first}, {third}, {fifth}"
+            );
+        }
+    }
 }
 
 // Destructuring Structs
@@ -172,4 +208,11 @@ enum Message_02 {
     Move { x: i32, y: i32 },
     Write(String),
     ChangeColor(Color),
+}
+
+// Entire value with _
+fn foo(_: i32, y: i32) {
+    println!(
+        "This code only uses the y parameter: {y}"
+    );
 }
