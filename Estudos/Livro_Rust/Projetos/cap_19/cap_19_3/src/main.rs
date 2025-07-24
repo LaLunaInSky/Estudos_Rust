@@ -88,27 +88,27 @@ fn main() {
     // Destructuring Enums
     println!();
 
-    let msg_01 = Message::ChangeColor(
+    let msg_01 = Message_01::ChangeColor(
         0, 160, 255
     );
 
     match msg_01 {
-        Message::Quit => {
+        Message_01::Quit => {
             println!(
                 "The quit variant has no data to desctructure."
             );
         }
-        Message::Move { x, y } => {
+        Message_01::Move { x, y } => {
             println!(
                 "Move in the x direction {x} and in the y direction {y}"
             );
         }
-        Message::Write(text) => {
+        Message_01::Write(text) => {
             println!(
                 "The message: {text}"
             );
         }
-        Message::ChangeColor(r, g, b) => {
+        Message_01::ChangeColor(r, g, b) => {
             println!(
                 "Change color to red {r}, green {g}, and blue {b}"
             );
@@ -177,6 +177,8 @@ fn main() {
 
     // Unused variable by starting its name with _
     println!();
+
+
 }
 
 // Destructuring Structs
@@ -186,7 +188,7 @@ struct Point {
 }
 
 // Destructuring Enums
-enum Message {
+enum Message_01 {
     Quit,
     Move {
         x: i32, 
