@@ -178,7 +178,41 @@ fn main() {
     // Unused variable by starting its name with _
     println!();
 
+    let _x_06 = 5;
+    let y_02 = 10;
 
+    let s = Some(
+        String::from("Hello!")
+    );
+
+    if let Some(_) = s {
+        println!("found a string")
+    };
+
+    println!("{s:?}");
+
+    // Remaining parts of a value with ..
+    println!();
+
+    struct Point_02 {
+        x: i32,
+        y: i32,
+        z: i32,
+    }
+
+    let origin = Point_02 { x: 0, y: 0, z: 0 };
+
+    match origin  {
+        Point_02 { x, .. } => println!("x is {x}"),
+    }
+
+    match numbers_01 {
+        (first, .., last ) => {
+            println!("Some numbers: {first}, {last}");
+        }
+    }
+
+    // Extra conditionals with match guards
 }
 
 // Destructuring Structs
