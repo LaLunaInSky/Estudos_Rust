@@ -213,6 +213,46 @@ fn main() {
     }
 
     // Extra conditionals with match guards
+    // Example 1
+    println!();
+
+    let num_01 = Some(4);
+
+    match num_01 {
+        Some(x) if x % 2 == 0 => println!("The number {x} is even"),
+        Some(x) => println!("The number {x} is odd"),
+        None => (),
+    }
+
+    // Example 2
+    println!();
+
+    let x_07 = 4;
+    let y_03 = false;
+
+    match x_07 {
+        4 | 5 | 6 if y_03 => println!("yes"),
+        _ => println!("no"),
+    }
+
+    // @ Bindings
+    println!();
+
+    enum Message_03 {
+        Hello { id: i32 },
+    }
+
+    let msg_03 = Message_03::Hello { id: 5 };
+
+    match msg_03 {
+        Message_03::Hello {
+            id: id_variable @ 3..=7,
+        } => println!("Found an id in range: {id_variable}"),
+        Message_03::Hello { id: 10..=12 } => {
+            println!("Found an id in another range")
+        }
+        Message_03::Hello { id } => println!("Found some other id: {id}"),
+    }
 }
 
 // Destructuring Structs
