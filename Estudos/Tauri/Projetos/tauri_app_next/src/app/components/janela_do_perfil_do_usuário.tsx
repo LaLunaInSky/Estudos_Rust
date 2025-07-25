@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
 
 export function JanelaDoPerfilDoUsuário() {
-    let [perfil_mostrar, set_perfil_mostrar] = useState("test");
+    let [perfil_mostrar, set_perfil_mostrar] = useState(false);
 
     useEffect(()=>{
         invoke(
             "verificar_menu_do_perfil", {
-                mensagem: perfil_mostrar
+                mostrar_o_menu_do_perfil: perfil_mostrar
             }
         ).then().catch(console.error);
     })
