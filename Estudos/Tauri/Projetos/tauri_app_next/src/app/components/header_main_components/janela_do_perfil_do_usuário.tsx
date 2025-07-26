@@ -1,14 +1,9 @@
-'use client'
-
-import { useEffect, useState } from "react";
-
-export function JanelaDoPerfilDoUsuário() {
-    let [perfil_mostrar, set_perfil_mostrar] = useState(true);
-
-    
+export function JanelaDoPerfilDoUsuário(
+{mostrar_menu} : {mostrar_menu: boolean}
+) {
     return (
         <div
-            className={`${!perfil_mostrar ? "hidden" : "fixed"}
+            className={`${!mostrar_menu ? "hidden" : "fixed"}
                 bg-neutral-300/80 w-50 h-svh  absolute right-0
             `}
         >
