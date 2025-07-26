@@ -41,7 +41,7 @@ export function HeaderMain() {
                     </div>
                     <div
                         className={`
-                            ${"bg-neutral-300/70"} px-3 py-1 -my-1
+                            ${!mostrar_menu_usuário ? "bg-neutral-50/0" : "bg-neutral-300/30"} px-3 py-1 -my-1 transition
                         `}
                     >
                         <BotãoPerfil 
