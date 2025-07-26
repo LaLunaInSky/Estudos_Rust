@@ -7,9 +7,13 @@ export default function Page() {
       <HeaderMain />
       <main>
         <JanelaDoPerfilDoUsuário />
-        <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dolores pariatur iste rem sit minima laudantium eligendi enim deserunt quas ut delectus, officia, est odio incidunt optio? Modi, repellat aliquid!
-        </h1>
+        <div
+          className="
+            px-3
+          "
+        >
+
+        </div>
       </main>
     </div>
   );

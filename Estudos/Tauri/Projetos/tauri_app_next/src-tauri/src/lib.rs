@@ -1,6 +1,9 @@
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 
-mod commands;
+#[tauri::command]
+fn verificar_menu_do_perfil(menu_aberto: bool) {
+  println!("O menu está {}", menu_aberto);
+}
 
 pub fn run() {
   tauri::Builder::default()
@@ -14,7 +17,7 @@ pub fn run() {
       }
       Ok(())
     })
-    .invoke_handler(tauri::generate_handler![commands::verificar_menu_do_perfil])
+    .invoke_handler(tauri::generate_handler![verificar_menu_do_perfil])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
 }

@@ -2,24 +2,12 @@
 
 import UserIcon from "@/../public/user-icon.svg"
 import Image from "next/image"
-import { invoke } from "@tauri-apps/api/core" 
-import { useEffect, useState } from "react";
+import { invoke } from "@tauri-apps/api/core"
 
 export function MenuPerfil() {
     let icone_do_perfil = UserIcon;
-    // let [menu_mostrar, set_menu_mostrar] = useState(false);
 
-    // const setar_menu_mostrar = () => {
-    //     if (menu_mostrar) {
-    //         set_menu_mostrar(false);
-    //     } else {
-    //         set_menu_mostrar(true);
-    //     }
-    // }
-
-    // useEffect(()=>{
-    //     console.log(menu_mostrar)
-    // })
+    
 
     return (
         <button
