@@ -20,7 +20,7 @@ export function BotãoPerfil(
     return (
         <button
             className={`
-                ${mostrar_menu ? "bg-neutral-700/30 hover:bg-neutral-900/30": "bg-neutral-300/30 hover:bg-neutral-100/30"} transition w-9 h-9 rounded-full cursor-pointer  flex justify-center items-center
+                ${mostrar_menu ? "bg-neutral-900/30 hover:bg-indigo-400/60": "bg-neutral-300/30 hover:bg-indigo-300/40"} transition w-9 h-9 rounded-full cursor-pointer  flex justify-center items-center
             `}
             onClick={verificar_mostrar_menu_usuário}
         >

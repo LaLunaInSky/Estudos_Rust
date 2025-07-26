@@ -1,18 +1,13 @@
-import { HeaderMain } from "./components/header_main";
-
-export default function Page() {  
+export default function Home() {  
   return (
-    <div>
-      <HeaderMain />
-      <main>
-        <div
-          className="
-            px-3
-          "
-        >
-
-        </div>
-      </main>
+    <div
+      className="
+        w-full h-30 bg-red-400
+      "
+    >
+      <h1>
+        Home
+      </h1>
     </div>
   );
 }
