@@ -10,18 +10,18 @@
             link: "/svelte/basic",
             nome: "basic svelte",
         },
-        {
-            link: "/svelte/advanced",
-            nome: "advanced svelte",
-        },
-        {
-            link: "/sveltekit/basic",
-            nome: "basic sveltekit",
-        },
-        {
-            link: "/sveltekit/advanced",
-            nome: "advanced sveltekit",
-        }
+        // {
+        //     link: "/svelte/advanced",
+        //     nome: "advanced svelte",
+        // },
+        // {
+        //     link: "/sveltekit/basic",
+        //     nome: "basic sveltekit",
+        // },
+        // {
+        //     link: "/sveltekit/advanced",
+        //     nome: "advanced sveltekit",
+        // }
     ]
 </script>
 

@@ -10,6 +10,9 @@
 
     function addNumber() {
         numbers.push(numbers.length + 1);
+
+        /* Inspecting State */
+        $inspect(numbers)
     }
 </script>
 
