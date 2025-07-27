@@ -5,12 +5,12 @@
 
 <div
     class="
-        h-svh w-full
+        w-full h-50 pt-5
     "
 >
     <h1
         class="
-            text-neutral-50
+            text-neutral-50 text-center font-bold uppercase text-xl cursor-default select-none
         "
     >
         Home

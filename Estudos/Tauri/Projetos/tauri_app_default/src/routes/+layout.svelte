@@ -12,7 +12,7 @@
     <BarraMenuNavegação />
     <div
         class="
-            bg-red-500 w-full h-full mt-12
+            bg-slate-950 w-full px-2 mt-12
         "
     >
         {@render children()}
