@@ -1,8 +1,11 @@
-<script lang="ts">
+<script 
+    lang="ts"
+>
 </script>
 
-<div>
+<div
+    class="
+        h-svh w-full
+    "
+>
 </div>
-
-<style>
-</style>
