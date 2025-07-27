@@ -23,7 +23,7 @@
 
     <div
         class="
-            
+            flex flex-wrap gap-3 
         "
     >
         <DynamicAttributes />
