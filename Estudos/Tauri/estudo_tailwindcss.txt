@@ -1,2 +1,2 @@
-/* Principal */
-https://tailwindcss.com/docs/styling-with-utility-classes
+/* Documentação De Instalação no vite */
+https://svelte.dev/tutorial/svelte/raw-state
