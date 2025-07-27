@@ -10,6 +10,7 @@
     /* Reactivity */
     import State from "./components/reactivity/state.svelte";
     import DeepState from "./components/reactivity/deep_state.svelte";
+    import Effects from "./components/reactivity/effects.svelte";
 
 </script>
 
@@ -54,6 +55,7 @@
         >
             <State />
             <DeepState />
+            <Effects />
         </div>
     </div>
 </div>

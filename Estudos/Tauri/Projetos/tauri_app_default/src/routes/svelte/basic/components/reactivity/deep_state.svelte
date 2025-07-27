@@ -10,10 +10,10 @@
 
     function addNumber() {
         numbers.push(numbers.length + 1);
-
-        /* Inspecting State */
-        $inspect(numbers)
     }
+
+    /* Inspecting State */
+    $inspect(numbers).with(console.trace);
 </script>
 
 <div
