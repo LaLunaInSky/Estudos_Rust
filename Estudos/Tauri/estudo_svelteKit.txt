@@ -4,5 +4,15 @@ https://svelte.dev/docs/kit/introduction
 /* Capítulo Parado */
 https://svelte.dev/docs/kit/creating-a-project
 
-/* Capítulo Tutorial Parado */
-https://svelte.dev/tutorial/kit/layout-data
+
+ /*******************/
+/* Basic SvelteKit */
+https://svelte.dev/tutorial/kit/introducing-sveltekit
+
+/* Capítulo Parado */
+https://svelte.dev/tutorial/kit/introducing-sveltekit
+
+
+ /**********************/
+/* Advanced SvelteKit */
+https://svelte.dev/tutorial/kit/handle

@@ -4,5 +4,16 @@ https://svelte.dev/docs/svelte/overview
 /* Capítulo Parado */
 https://svelte.dev/docs/svelte/getting-started
 
-/* Capítulo Do Tutorial Parado */
-https://svelte.dev/tutorial/svelte/text-inputs
+
+ /****************/
+/* Basic Svelted*/
+https://svelte.dev/tutorial/svelte/welcome-to-svelte
+
+/* Capítulo Parado */
+https://svelte.dev/tutorial/svelte/welcome-to-svelte
+
+
+ /********************/
+/* Advanced Svelted */
+https://svelte.dev/tutorial/svelte/raw-state
+
