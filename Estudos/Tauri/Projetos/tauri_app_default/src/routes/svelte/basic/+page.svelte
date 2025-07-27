@@ -1,9 +1,11 @@
 <script
     lang="ts"
 >
+    /* Introction */
     import DynamicAttributes from "./components/introduction/dynamic_attributes.svelte";
+    import YourFirstComponent from "./components/introduction/your_first_component.svelte";
+    import Styling from "./components/introduction/styling.svelte";
 
-    const name = "Svelte";
 </script>
 
 <div
@@ -23,21 +25,14 @@
         >
             introduction
         </h1>
-        <h2
-            class="
-                text-neutral-50 text-center font-bold cursor-default select-none
-            "
-        >
-            Hello, World!
-            <br>
-            I'm { name.toUpperCase() }!
-        </h2>
+        <YourFirstComponent />
         <div
             class="
-                flex flex-wrap gap-3
+                flex flex-wrap gap-4
             "
         >
             <DynamicAttributes />
+            <Styling />
         </div>
     </div>
 </div>

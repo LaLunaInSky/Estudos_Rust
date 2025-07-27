@@ -1,2 +1,7 @@
-/* Documentação De Instalação no vite */
-https://svelte.dev/tutorial/svelte/raw-state
+ /**********************/
+/* Instalação no vite */
+https://tailwindcss.com/docs/installation/using-vite
+
+ /*****************************/
+/* Configuração no sveltekit */
+https://tailwindcss.com/docs/installation/framework-guides/sveltekit
