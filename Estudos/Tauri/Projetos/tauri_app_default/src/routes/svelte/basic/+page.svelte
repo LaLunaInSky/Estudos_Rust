@@ -6,7 +6,10 @@
     import YourFirstComponent from "./components/introduction/your_first_component.svelte";
     import Styling from "./components/introduction/styling.svelte";
     import HtmlTags from "./components/introduction/html_tags.svelte";
-    import State from "./components/introduction/state.svelte";
+
+    /* Reactivity */
+    import State from "./components/reactivity/state.svelte";
+    import DeepState from "./components/reactivity/deep_state.svelte";
 
 </script>
 
@@ -36,7 +39,21 @@
             <DynamicAttributes />
             <Styling />
             <HtmlTags />
+        </div>
+        <h1
+            class="
+                uppercase text-slate-300 text-3xl mt-3
+            "
+        >
+            reactivity    
+        </h1>
+        <div
+            class="
+                flex flex-wrap gap-7
+            "
+        >
             <State />
+            <DeepState />
         </div>
     </div>
 </div>
