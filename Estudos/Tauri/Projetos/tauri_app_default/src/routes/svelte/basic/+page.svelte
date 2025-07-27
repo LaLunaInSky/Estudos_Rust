@@ -5,6 +5,8 @@
     import DynamicAttributes from "./components/introduction/dynamic_attributes.svelte";
     import YourFirstComponent from "./components/introduction/your_first_component.svelte";
     import Styling from "./components/introduction/styling.svelte";
+    import HtmlTags from "./components/introduction/html_tags.svelte";
+    import State from "./components/introduction/state.svelte";
 
 </script>
 
@@ -28,11 +30,13 @@
         <YourFirstComponent />
         <div
             class="
-                flex flex-wrap gap-4
+                flex flex-wrap gap-7
             "
         >
             <DynamicAttributes />
             <Styling />
+            <HtmlTags />
+            <State />
         </div>
     </div>
 </div>
