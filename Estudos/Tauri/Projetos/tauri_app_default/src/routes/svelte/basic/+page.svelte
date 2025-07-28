@@ -1,7 +1,7 @@
 <script
     lang="ts"
 >
-    /* Introction */
+    /* Introduction */
     import DynamicAttributes from "./components/introduction/dynamic_attributes.svelte";
     import YourFirstComponent from "./components/introduction/your_first_component.svelte";
     import Styling from "./components/introduction/styling.svelte";
@@ -19,7 +19,7 @@
 
 <div
     class="
-        w-full h-50 pt-5
+        w-full pt-5
     "
 >
     <div
