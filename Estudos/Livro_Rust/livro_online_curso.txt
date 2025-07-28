@@ -1,0 +1,11 @@
+/* Livro Do Curso */
+https://doc.rust-lang.org/book/foreword.html
+
+/* Capítulo Parado - lembrar de voltar mais tarde */
+https://doc-rust--lang-org.translate.goog/book/ch17-05-traits-for-async.html?_x_tr_sl=auto&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
++ O Stream Traço +
+
+
+/* Capítulo Parado - que estou agora */
+https://doc-rust--lang-org.translate.goog/book/ch20-01-unsafe-rust.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
++  +
