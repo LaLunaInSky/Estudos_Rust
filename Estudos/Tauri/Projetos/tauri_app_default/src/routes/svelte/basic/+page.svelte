@@ -11,6 +11,7 @@
     import State from "./components/reactivity/state.svelte";
     import DeepState from "./components/reactivity/deep_state.svelte";
     import Effects from "./components/reactivity/effects.svelte";
+    import UniversalReactivity from "./components/reactivity/universal_reactivity.svelte";
 
 </script>
 
@@ -43,7 +44,7 @@
         </div>
         <h1
             class="
-                uppercase text-slate-300 text-3xl mt-3
+                uppercase text-slate-300 text-3xl mt-3 my-5
             "
         >
             reactivity    
@@ -56,6 +57,7 @@
             <State />
             <DeepState />
             <Effects />
+            <UniversalReactivity />
         </div>
     </div>
 </div>
