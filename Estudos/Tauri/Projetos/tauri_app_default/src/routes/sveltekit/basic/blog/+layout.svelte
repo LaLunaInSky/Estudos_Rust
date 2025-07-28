@@ -1,8 +1,9 @@
 <script
     lang="ts"
 >
-    /* Routing */
-    import BarraDeNavegação from "./components/routing/barra_de_navegação.svelte";
+    let { children } = $props();
+
+    import BarraDeNavegação from "../components/routing/barra_de_navegação.svelte";
 </script>
 
 <div
@@ -20,15 +21,11 @@
                 uppercase text-slate-300 text-3xl mb-3
             "
         >
-            routing
+            Blog
         </h1>
         <BarraDeNavegação />
-        <div
-            class="
-                flex flex-wrap gap-7
-            "
-        >
-            
+        <div>
+            {@render children()}
         </div>
     </div>
 </div>
