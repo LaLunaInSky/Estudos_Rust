@@ -13,6 +13,8 @@
     import Effects from "./components/reactivity/effects.svelte";
     import UniversalReactivity from "./components/reactivity/universal_reactivity.svelte";
 
+    /* Props */
+
 </script>
 
 <div
@@ -44,7 +46,7 @@
         </div>
         <h1
             class="
-                uppercase text-slate-300 text-3xl mt-3 my-5
+                uppercase text-slate-300 text-3xl my-5
             "
         >
             reactivity    
@@ -58,6 +60,20 @@
             <DeepState />
             <Effects />
             <UniversalReactivity />
+        </div>
+        <h1
+            class="
+                uppercase text-slate-300 text-3xl my-7
+            "
+        >
+            props
+        </h1>
+        <div
+            class="
+                flex flex-wrap gap-7
+            "
+        >
+
         </div>
     </div>
 </div>

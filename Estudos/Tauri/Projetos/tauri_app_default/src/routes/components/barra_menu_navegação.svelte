@@ -27,7 +27,7 @@
 
 <div
     class="
-        bg-slate-500/50 w-full h-12 flex gap-6 justify-center items-center uppercase text-neutral-200 text-sm font-bold *:hover:text-indigo-500/40 fixed -mt-12 *:hover:underline-2 *:hover:underline-offset-4 select-none
+        bg-slate-600 w-full h-12 flex gap-6 justify-center items-center uppercase text-neutral-200 text-sm font-bold *:hover:text-indigo-500/40 fixed -mt-12 *:hover:underline-2 *:hover:underline-offset-4 select-none
     "
 >
     {#each rotas_menus as rota}

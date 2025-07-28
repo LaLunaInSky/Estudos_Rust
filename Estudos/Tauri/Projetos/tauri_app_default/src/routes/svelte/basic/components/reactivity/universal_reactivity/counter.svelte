@@ -1,7 +1,7 @@
 <script
     lang="ts"
 >
-    import { counter } from "./share";
+    import { counter } from "./shared.svelte";
 </script>
 
 <button
