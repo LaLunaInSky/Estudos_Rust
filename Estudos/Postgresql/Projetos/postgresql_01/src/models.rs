@@ -35,8 +35,36 @@ pub async fn get_user(
     let user = query_as::<_, User>(
         "SELECT * FROM users WHERE id = $1"
     ).bind(user_id)
-     .fecth_one(pool)
+     .fetch_one(pool)
      .await?;
 
     Ok(user)
+}
+
+pub async fn update_user_email(
+    pool: &PgPool,
+    user_id: i32,
+    new_email: &str
+) -> Result<(), Error> {
+    query(
+        "UPDATE users SET email = $1 WHERE id = $2"
+    ).bind(new_email)
+     .bind(user_id)
+     .execute(pool)
+     .await?;
+
+    Ok(())
+}
+
+pub async fn delete_user(
+    pool: &PgPool,
+    user_id: i32
+) -> Result<(), Error> {
+    query(
+        "DELETE FROM users WHERE id = $1"
+    ).bind(user_id)
+     .execute(pool)
+     .await?;
+
+    Ok(())
 }
