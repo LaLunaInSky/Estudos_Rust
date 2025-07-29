@@ -23,12 +23,19 @@
             routing
         </h1>
         <BarraDeNavegação />
-        <div
+        <h2
+            class="
+                uppercase text-xl text-slate-400/70 font-bold
+            "
+        >
+            home
+        </h2>
+        <!-- <div
             class="
                 flex flex-wrap gap-7
             "
         >
             
-        </div>
+        </div> -->
     </div>
 </div>
