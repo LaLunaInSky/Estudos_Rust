@@ -1,5 +1,32 @@
 use std::slice;
 
+// 20-8
+unsafe extern "C" {
+    // 20-9
+    safe fn abs(input: i32) -> i32;
+}
+
+// call function rust in other language
+#[unsafe(no_mangle)]
+pub extern "C" fn call_from_c() {
+    println!(
+        "Just called a Rust function from C!"
+    );
+}
+
+// 20-10 - Security
+static HELLO_WORLD: &str = "Hello, World!";
+
+// 20-11 - Unsecurity
+static mut COUNTER: u32 = 0;
+
+// SAFETY: Calling this from more than a single thread at a time is undefined behavior, so you *must* guarantee you only call it from a single thread at a time
+unsafe fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
+}
+
 fn main() {
     // 20-1
     let mut num = 5;
@@ -64,5 +91,36 @@ fn main() {
                 ),
             )
         }
+    }
+
+    // 20-8
+    unsafe {
+        println!(
+            "\nAbsolute value of -3 according to C: {}",
+            abs(-3)
+        );
+    }
+
+    // 20-9
+    println!(
+        "\nAbsolute value of -3 according to C: {}",
+        abs(-3)
+    );
+
+    // 20-10
+    println!(
+        "\nName is: {}",
+        HELLO_WORLD
+    );
+
+    // 20-11
+    unsafe {
+        // SAFETY: This is only called from a single thread in `main`
+        add_to_count(3);
+
+        println!(
+            "\nCOUNTER: {}",
+            *(&raw const COUNTER)
+        );
     }
 }
