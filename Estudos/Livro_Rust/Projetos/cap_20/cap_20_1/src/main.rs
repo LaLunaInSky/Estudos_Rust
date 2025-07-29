@@ -27,6 +27,15 @@ unsafe fn add_to_count(inc: u32) {
     }
 }
 
+// 20-12
+unsafe trait Foo {
+    // methods go here
+}
+
+unsafe impl Foo for i32 {
+    // method implementations go here
+}
+
 fn main() {
     // 20-1
     let mut num = 5;
