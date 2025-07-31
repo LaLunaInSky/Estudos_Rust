@@ -4,7 +4,7 @@ use modulos::Iterator;
 
 // 20-13
 struct Counter {
-    count: i32;
+    count: i32,
 }
 
 impl Counter {
@@ -14,7 +14,7 @@ impl Counter {
 }
 
 impl Iterator for Counter {
-    type Item = u32;
+    type Item = i32;
 
     fn next(
         &mut self
