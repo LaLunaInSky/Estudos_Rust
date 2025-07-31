@@ -1,4 +1,7 @@
-use std::ops::Add;
+use std::{
+    fmt,
+    ops::Add
+};
 
 // 20-15
 #[derive(Debug, Copy, Clone, PartialEq)]
@@ -84,6 +87,38 @@ impl Animal for Dog {
     }
 }
 
+// 20-23
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) {
+        let output = self.to_string();
+
+        let len = output.len();
+
+        println!(
+            "{}\n*{}*\n* {} *\n*{}*\n{}",
+            "*".repeat(len + 4),
+            " ".repeat(len + 2),
+            output,
+            " ".repeat(len + 2),
+            "*".repeat(len + 4)
+        )
+    }
+}
+
+// 20-24
+struct Wrapper(Vec<String>);
+
+impl fmt::Display for Wrapper {
+    fn fmt(
+        &self, f: &mut fmt::Formatter
+    ) -> fmt::Result {
+        write!(
+            f, "[{}]",
+            self.0.join(", ")
+        )
+    }
+}
+
 fn main() {
     assert_eq!(
         Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
@@ -108,5 +143,17 @@ fn main() {
     println!(
         "\nA baby dog is called a {}",
         <Dog as Animal>::baby_name()
+    );
+
+    // 20-24
+    let w = Wrapper(
+        vec![
+            String::from("hello"),
+            String::from("world!")    
+        ]
+    );
+
+    println!(
+        "\nw = {w}"
     );
 }
