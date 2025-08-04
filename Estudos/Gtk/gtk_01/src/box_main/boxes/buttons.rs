@@ -1,11 +1,28 @@
+mod custom_button;
+
+use custom_button::{
+    CustomButton
+};
+
 use gtk::{
     self,
     prelude::*
 };
 
-pub fn build_button_increment() -> gtk::Button {
+pub fn build_a_custom_button() -> CustomButton {
+    let button = CustomButton::new();
+
+    button.set_margin_top(12);
+    button.set_margin_bottom(12);
+    button.set_margin_start(12);
+    button.set_margin_end(12);
+
+    return button;
+}
+
+pub fn build_button_decrement() -> gtk::Button {
     let button = gtk::Button::builder()
-                .label("Increment")
+                .label("Decrement")
                 .margin_top(12)
                 .margin_bottom(12)
                 .margin_start(12)
@@ -15,9 +32,9 @@ pub fn build_button_increment() -> gtk::Button {
     return button;
 }
 
-pub fn build_button_decrement() -> gtk::Button {
+pub fn build_button_increment() -> gtk::Button {
     let button = gtk::Button::builder()
-                .label("Decrement")
+                .label("Increment")
                 .margin_top(12)
                 .margin_bottom(12)
                 .margin_start(12)
