@@ -18,6 +18,13 @@ use std::{
     rc::Rc
 };
 
+mod frame_main;
+
+use frame_main::{
+    build_button_increment,
+    build_button_decrement
+};
+
 const APP_ID: &str = "com.lalunainsky.gtk_01"; 
 
 fn build_box_buttons_increments_and_decrements() -> gtk::Box {
@@ -123,30 +130,6 @@ fn build_box_buttons_increment_and_decrement_02() -> gtk::Box {
     ));
 
     return box_frame;
-}
-
-fn build_button_decrement() -> gtk::Button {
-    let button = gtk::Button::builder()
-                .label("Decrement")
-                .margin_top(12)
-                .margin_bottom(12)
-                .margin_start(12)
-                .margin_end(12)
-                .build();
-
-    return button;
-}
-
-fn build_button_increment() -> gtk::Button {
-    let button = gtk::Button::builder()
-                .label("Increment")
-                .margin_top(12)
-                .margin_bottom(12)
-                .margin_start(12)
-                .margin_end(12)
-                .build();
-
-    return button;
 }
 
 fn build_button_hello_world() -> gtk::Button {
