@@ -1,32 +1,55 @@
-use glib::clone;
+use gtk::{prelude::*, Button};
 
 use gtk::{
-    prelude::*,
     glib,
+    Application,
+    ApplicationWindow
 };
 
-fn on_activate(
-    application: &gtk::Application
-) {
-    let window = gtk::ApplicationWindow::new(application);
-    
-    let button = gtk::Button::with_label("Hello World!");
+const APP_ID: &str = "com.lalunainsky.gtk_01"; 
+
+fn build_button() -> Button {
+    let button = Button::builder()
+                .label("Press me!")
+                .margin_top(12)
+                .margin_bottom(12)
+                .margin_start(12)
+                .margin_end(12)
+                .build();
 
     button.connect_clicked(
-        clone!(@weak window => move |_| window.close())
+        |button| {
+            button.set_label("Hello World!")
+        }
     );
 
-    window.set_child(Some(&button));
+    return button;
+}
+
+fn build_ui(
+    app: &Application
+) {
+    let button_01 = build_button();
+
+    let window = ApplicationWindow::builder()
+                .application(app)
+                .title("GTK 01 App")
+                .default_width(500)
+                .default_height(500)
+                .opacity(0.95)
+                .resizable(false)
+                .child(&button_01)
+                .build();
 
     window.present();
 }
 
-fn main() {
-    let app = gtk::Application::builder()
-            .application_id("com.lalunainsky.gtk_01")
+fn main() -> glib::ExitCode {
+    let app = Application::builder()
+            .application_id(APP_ID)
             .build();
 
-    app.connect_activate(on_activate);
+    app.connect_activate(build_ui);
 
-    app.run();
+    app.run()
 }
