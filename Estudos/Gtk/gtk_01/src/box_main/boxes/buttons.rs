@@ -1,7 +1,6 @@
 use gtk::{
     self,
-    prelude::*,
-    Button
+    prelude::*
 };
 
 pub fn build_button_increment() -> gtk::Button {
