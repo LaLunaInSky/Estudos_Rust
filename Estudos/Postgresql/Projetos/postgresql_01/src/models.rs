@@ -25,6 +25,12 @@ pub async fn create_user(
      .execute(pool)
      .await?;
 
+
+    println!(
+        "Usuário: {} com email: {}, criado com sucesso!",
+        name, email
+    );
+
     Ok(())
 }
 
@@ -38,8 +44,20 @@ pub async fn get_user(
      .fetch_one(pool)
      .await?;
 
+    println!(
+        "Select table users sucess!"
+    );
+
     Ok(user)
 }
+
+/*
+CREATE TABLE users (  
+    user_id int NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+*/
 
 pub async fn update_user_email(
     pool: &PgPool,

@@ -7,8 +7,6 @@ mod models;
 use models::{
     create_user,
     get_user,
-    update_user_email,
-    delete_user
 };
 
 #[tokio::main]
@@ -29,19 +27,19 @@ async fn main() {
     );
 
     // Create a new user
-    // create_user(
-    //     &pool, "LalunaInSky", "moonaflordapele@gmail.com"
-    // ).await.unwrap();
+    create_user(
+        &pool, "LalunaInSky", "moonaflordapele@gmail.com"
+    ).await.unwrap();
 
     // Read the user
-    // let user = get_user(
-    //     &pool, 1
-    // ).await.unwrap();
+    let user = get_user(
+        &pool, 1
+    ).await.unwrap();
 
-    // println!(
-    //     "User: {:?}",
-    //     user
-    // );
+    println!(
+        "User: {:?}",
+        user
+    );
 
     //
 }
