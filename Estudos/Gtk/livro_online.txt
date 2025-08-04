@@ -2,5 +2,15 @@ https://gtk-rs.org/gtk4-rs/stable/latest/book/introduction.html
 
  /*******************/
 /* Capítulo Parado */
-https://gtk-rs.org/gtk4-rs/stable/latest/book/hello_world.html
+https://gtk--rs-org.translate.goog/gtk4-rs/stable/latest/book/g_object_subclassing.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
 +  +
+
+
+ /**********************/
+/* Galeria de Widgets */
+https://docs.gtk.org/gtk4/visual_index.html
+
+
+ /*********************/
+/* Gtk official site */
+https://docs-gtk-org.translate.goog/gtk4/index.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
