@@ -1,4 +1,6 @@
-use gtk::{prelude::*, Button};
+use gtk::{
+    prelude::*
+};
 
 use gtk::{
     self,
@@ -123,8 +125,8 @@ fn build_box_buttons_increment_and_decrement_02() -> gtk::Box {
     return box_frame;
 }
 
-fn build_button_decrement() -> Button {
-    let button = Button::builder()
+fn build_button_decrement() -> gtk::Button {
+    let button = gtk::Button::builder()
                 .label("Decrement")
                 .margin_top(12)
                 .margin_bottom(12)
@@ -135,8 +137,8 @@ fn build_button_decrement() -> Button {
     return button;
 }
 
-fn build_button_increment() -> Button {
-    let button = Button::builder()
+fn build_button_increment() -> gtk::Button {
+    let button = gtk::Button::builder()
                 .label("Increment")
                 .margin_top(12)
                 .margin_bottom(12)
@@ -147,8 +149,8 @@ fn build_button_increment() -> Button {
     return button;
 }
 
-fn build_button_hello_world() -> Button {
-    let button = Button::builder()
+fn build_button_hello_world() -> gtk::Button {
+    let button = gtk::Button::builder()
                 .label("Press me!")
                 .margin_top(12)
                 .margin_bottom(12)
