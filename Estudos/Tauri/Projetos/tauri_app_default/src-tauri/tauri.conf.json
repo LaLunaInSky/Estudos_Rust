@@ -14,7 +14,9 @@
       {
         "title": "tauri_app_default",
         "maximized": true,
-        "resizable": false
+        "resizable": false,
+        "fullscreen": false,
+        "backgroundColor": "#000000"
       }
     ],
     "security": {
