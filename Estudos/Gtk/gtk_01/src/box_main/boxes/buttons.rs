@@ -6,8 +6,31 @@ use custom_button::{
 
 use gtk::{
     self,
-    prelude::*
+    prelude::*,
+    glib
 };
+
+use glib::closure_local;
+
+pub fn build_button_hello_world_closure_reactivity() -> gtk::Button {
+    let button = gtk::Button::builder()
+            .label("Press me!")
+            .margin_top(12)
+            .margin_bottom(12)
+            .margin_start(12)
+            .margin_end(12)
+            .build();
+
+    button.connect_closure(
+        "clicked", 
+        false, 
+        closure_local!(move |button: gtk::Button| {
+            button.set_label("Hello, World!");
+        }),
+    );
+
+    return button;
+}
 
 pub fn build_a_custom_button() -> CustomButton {
     let button = CustomButton::new();

@@ -15,11 +15,29 @@ use std::{
 mod buttons;
 
 use buttons::{
+    build_button_hello_world_closure_reactivity,
     build_a_custom_button,
     build_button_decrement,
     build_button_increment,
     build_button_hello_world
 };
+
+pub fn build_box_button_hello_world_closure_reactivity() -> gtk::Box {
+    let box_frame = gtk::Box::builder()
+                .orientation(Orientation::Vertical)
+                .build();
+
+    let button = build_button_hello_world_closure_reactivity();
+    let label = gtk::Label::builder()
+            .label("Box Hello World Closure Reactivity")
+            .margin_top(10)
+            .build();
+
+    box_frame.append(&label);
+    box_frame.append(&button);
+
+    return box_frame;
+}
 
 pub fn build_box_custom_button() -> gtk::Box {
     let box_frame = gtk::Box::builder()
