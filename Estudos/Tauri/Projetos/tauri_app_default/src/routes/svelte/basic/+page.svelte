@@ -15,6 +15,18 @@
 
     /* Props */
     import DeclaringProps from "./components/props/declaring_props.svelte";
+    import SpreadProps from "./components/props/spread_props.svelte";
+
+
+    /* Props Arg */
+    const pkg = {
+        name: "svelte",
+        version: 5,
+        description: "blazing fast",
+        website: "https://svelte.dev",
+    }
+
+    /* Logic */
 </script>
 
 <div
@@ -70,13 +82,30 @@
         </h1>
         <div
             class="
-                flex flex-wrap gap-7
+                flex flex-wrap gap-7 pb-10
             "
         >
             <DeclaringProps 
-                answer={42}
+                answer={"42"}
             />
             <DeclaringProps />
+            <SpreadProps 
+                {...pkg}
+            />
+        </div>
+        <h1
+            class="
+                uppercase text-slate-300 text-3xl mb-3
+            "
+        >
+            logics
+        </h1>
+        <div
+            class="
+                flex flex-wrap gap-7 pb-10
+            "
+        >
+
         </div>
     </div>
 </div>
