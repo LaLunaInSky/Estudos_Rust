@@ -10,7 +10,7 @@ https://svelte.dev/docs/kit/creating-a-project
 https://svelte.dev/tutorial/kit/introducing-sveltekit
 
 /* Capítulo Parado */
-https://svelte.dev/tutorial/kit/headers
+https://svelte.dev/tutorial/kit/lib
 
 
  /**********************/

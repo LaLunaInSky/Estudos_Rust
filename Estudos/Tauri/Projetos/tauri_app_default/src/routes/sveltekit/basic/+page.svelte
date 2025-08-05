@@ -3,6 +3,9 @@
 >
     /* Routing */
     import BarraDeNavegação from "./components/routing/barra_de_navegação.svelte";
+
+    /* Headers and Cookies */
+    import MenuNavegação from "./components/headers_and_cookies/menu_navegação.svelte";
 </script>
 
 <div
@@ -37,5 +40,19 @@
         >
             
         </div> -->
+        <h1
+            class="
+                uppercase text-slate-300 text-3xl my-3
+            "
+        >
+            headers and cookies
+        </h1>
+        <div
+            class="
+                flex flex-wrap gap-7
+            "
+        >
+            <MenuNavegação />
+        </div>
     </div>
 </div>
