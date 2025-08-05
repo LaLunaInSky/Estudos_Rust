@@ -14,7 +14,7 @@
     import UniversalReactivity from "./components/reactivity/universal_reactivity.svelte";
 
     /* Props */
-
+    import DeclaringProps from "./components/props/declaring_props.svelte";
 </script>
 
 <div
@@ -63,7 +63,7 @@
         </div>
         <h1
             class="
-                uppercase text-slate-300 text-3xl my-7
+                uppercase text-slate-300 text-3xl mt-7 mb-3
             "
         >
             props
@@ -73,7 +73,10 @@
                 flex flex-wrap gap-7
             "
         >
-
+            <DeclaringProps 
+                answer={42}
+            />
+            <DeclaringProps />
         </div>
     </div>
 </div>
