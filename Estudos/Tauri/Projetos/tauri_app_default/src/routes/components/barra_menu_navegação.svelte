@@ -27,15 +27,21 @@
 
 <div
     class="
-        bg-slate-600 w-full h-12 flex gap-6 justify-center items-center uppercase text-neutral-200 text-sm font-bold *:hover:text-indigo-500/40 fixed -mt-12 *:hover:underline-2 *:hover:underline-offset-4 select-none
+        flex justify-center items-center h-14 fixed w-full -mt-12
     "
 >
-    {#each rotas_menus as rota}
-        <a 
-            href={rota.link}
-            target=""
-        >
-            {rota.nome}
-        </a>
-    {/each}
+    <div
+        class="
+            bg-slate-600/60 w-10/11 rounded-b-xl h-14 flex gap-6 justify-center items-center uppercase text-neutral-200 text-md font-bold *:hover:bg-neutral-50/70 *:hover:text-neutral-800 fixed *:p-2 *:transition-colors *:hover:transition-colors *:rounded-xl *:hover:underline-2 *:hover:underline-offset-4 select-none
+        "
+    >
+        {#each rotas_menus as rota}
+            <a
+                href={rota.link}
+                target=""
+            >
+                {rota.nome}
+            </a>
+        {/each}
+    </div>
 </div>
