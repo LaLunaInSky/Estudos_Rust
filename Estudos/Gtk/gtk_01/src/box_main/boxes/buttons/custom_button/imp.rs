@@ -5,10 +5,14 @@ use gtk::{
     subclass::prelude::*
 };
 
+use glib::Properties;
+
 use std::cell::Cell;
 
-#[derive(Default)]
+#[derive(Properties, Default)]
+#[properties(wrapper_type = super::CustomButton)]
 pub struct CustomButton {
+    #[property(get, set)]
     number: Cell<i32>,
 }
 
@@ -19,10 +23,16 @@ impl ObjectSubclass for CustomButton {
     type ParentType = gtk::Button;
 }
 
+#[glib::derived_properties]
 impl ObjectImpl for CustomButton {
     fn constructed(&self) {
         self.parent_constructed();
-        self.obj().set_label(&self.number.get().to_string());
+
+        let obj = self.obj();
+
+        obj.bind_property("number", obj.as_ref(), "label")
+           .sync_create()
+           .build();
     }
 }
 
@@ -30,7 +40,8 @@ impl WidgetImpl for CustomButton {}
 
 impl ButtonImpl for CustomButton {
     fn clicked(&self) {
-        self.number.set(self.number.get() + 1);
-        self.obj().set_label(&self.number.get().to_string());
+        let increment_number = self.obj().number() + 1;
+        
+        self.obj().set_number(increment_number);
     }
 }

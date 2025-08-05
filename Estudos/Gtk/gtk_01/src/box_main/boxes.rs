@@ -26,15 +26,39 @@ pub fn build_box_custom_button() -> gtk::Box {
                 .orientation(Orientation::Vertical)
                 .build();
     
-    let custom_button = build_a_custom_button();
+    let custom_button_01 = build_a_custom_button();
+    let custom_button_02 = build_a_custom_button();
 
     let label = gtk::Label::builder()
             .label("Box Custom Button")
             .margin_top(10)
             .build();
 
+    custom_button_01.bind_property("number", &custom_button_02, "number")
+            .transform_to(|_, number: i32| {
+                let increment_number = number + 1;
+
+                Some(increment_number.to_value())
+            })
+            .transform_from(|_, number: i32| {
+                let decrement_number = number - 1;
+
+                Some(decrement_number.to_value())
+            })
+            .bidirectional()
+            .sync_create()
+            .build();
+
+    custom_button_01.connect_number_notify(|button| {
+        println!(
+            "The current number of \'custom_button_01\' is {}.",
+            button.number()
+        );
+    });
+
     box_frame.append(&label);
-    box_frame.append(&custom_button);
+    box_frame.append(&custom_button_01);
+    box_frame.append(&custom_button_02);
 
     return box_frame;
 }

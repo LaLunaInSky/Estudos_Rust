@@ -2,8 +2,8 @@ https://gtk-rs.org/gtk4-rs/stable/latest/book/introduction.html
 
  /*******************/
 /* Capítulo Parado */
-https://gtk--rs-org.translate.goog/gtk4-rs/stable/latest/book/g_object_properties.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
-+ Adicionando propriedades a GObjects personalizados +
+https://gtk--rs-org.translate.goog/gtk4-rs/stable/latest/book/g_object_signals.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
++  +
 
 
  /**********************/
