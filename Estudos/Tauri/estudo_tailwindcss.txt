@@ -2,6 +2,7 @@
 /* Instalação no vite */
 https://tailwindcss.com/docs/installation/using-vite
 
+
  /*****************************/
 /* Configuração no sveltekit */
 https://tailwindcss.com/docs/installation/framework-guides/sveltekit

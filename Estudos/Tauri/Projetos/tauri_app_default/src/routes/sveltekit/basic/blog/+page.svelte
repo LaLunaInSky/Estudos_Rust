@@ -18,7 +18,7 @@
     </h2>
     <ul
         class="
-            *:text-indigo-400 flex flex-col justify-center items-center gap-5 *:hover:underline *:hover:underline-offset-4 *:transition *:hover:transition
+            *:text-indigo-400 flex flex-col justify-center items-stretch gap-5 *:hover:underline *:hover:underline-offset-4 *:transition *:hover:transition list-disc
         "
     >
         {#each data.summaries as { slug, title }}

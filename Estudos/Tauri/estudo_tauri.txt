@@ -1,8 +1,11 @@
+ /*************/
 /* Principal */
 https://tauri.app/start/
 
 /* Capítulo Parado */
 https://tauri.app/security/
 
-/* Chamada de rust */
+
+ /*******************/
+/* Chamada em rust */
 https://tauri.app/develop/calling-rust/
