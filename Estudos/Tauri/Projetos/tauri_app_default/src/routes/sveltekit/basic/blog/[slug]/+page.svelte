@@ -6,19 +6,19 @@
 
 <div
     class="
-        flex flex-col gap-7 w-100 justify-center items-center
+        flex flex-col gap-7 justify-center items-center
     "
 >
     <h1
         class="
-            text-neutral-200 text-center font-bold text-2xl
+            text-neutral-200 text-center font-bold text-2xl uppercase mb-3 mx-2
         "
     >
         { data.post?.title }
     </h1>
     <div
         class="
-            *:text-center *:text-neutral-400 *:text-lg
+            *:text-center *:text-neutral-400 *:text-xl w-130
         "
     >
         {@html data.post?.content}
