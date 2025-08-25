@@ -1,1 +1,0 @@
-Converta strings para latim pig. A primeira consoante de cada palavra é movida para o final da palavra e ay é adicionado, então first se torna irst-fay . Palavras que começam com uma vogal têm hay adicionado ao final ( apple se torna apple-hay ). Lembre-se dos detalhes sobre a codificação UTF-8!
