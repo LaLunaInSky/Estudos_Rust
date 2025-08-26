@@ -1,0 +1,9 @@
+ /************************/
+/* Documentação Inicial */
+https://book.leptos.dev/
+
+
+ /*******************/
+/* Capítulo Parado */
+https://book-leptos-dev.translate.goog/getting_started/leptos_dx.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
++ 5 Uso --cfg=erase_componentsdurante o desenvolvimento +
