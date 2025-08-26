@@ -5,5 +5,5 @@ https://book.leptos.dev/
 
  /*******************/
 /* Capítulo Parado */
-https://book-leptos-dev.translate.goog/view/01_basic_component.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
+https://book-leptos-dev.translate.goog/view/03_components.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
 +  +
