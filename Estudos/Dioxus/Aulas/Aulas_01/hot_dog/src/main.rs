@@ -1,7 +1,6 @@
 use dioxus::prelude::*;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
-const HEADER_SVG: Asset = asset!("/assets/header.svg");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
 
 fn main() {
@@ -11,23 +10,30 @@ fn main() {
 #[component]
 fn App() -> Element {
     rsx! {
-        document::Link { rel: "icon", href: FAVICON }
-        document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+        document::Link { 
+            rel: "icon", 
+            href: FAVICON 
+        }
+
+        document::Link { 
+            rel: "stylesheet", 
+            href: TAILWIND_CSS 
+        }
         
         div {
-            id: "title",
+            class: "text-red-500",
             h1 {
                 "HotDog! 🌭"
             }
         }
+
         div {
-            id: "dogview",
             img {
                 src: "https://images.dog.ceo/breeds/pitbull/dog-3981540_1280.jpg"
             }
         }
+
         div {
-            id: "buttons",
             button {
                 id: "skip",
                 "skip"

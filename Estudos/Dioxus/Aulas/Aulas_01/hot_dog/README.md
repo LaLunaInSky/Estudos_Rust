@@ -30,6 +30,4 @@ dx serve
 To run for a different platform, use the `--platform platform` flag. E.g.
 ```bash
 dx serve --platform desktop
-```
-
-npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+``
