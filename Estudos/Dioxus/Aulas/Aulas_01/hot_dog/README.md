@@ -32,3 +32,4 @@ To run for a different platform, use the `--platform platform` flag. E.g.
 dx serve --platform desktop
 ```
 
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
