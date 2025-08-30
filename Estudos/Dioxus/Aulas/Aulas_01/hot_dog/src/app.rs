@@ -1,11 +1,9 @@
 use dioxus::prelude::*;
 
 mod dog_view;
-mod buttons;
 mod title;
 
 use dog_view::DogView;
-use buttons::Buttons;
 use title::Title;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
@@ -27,8 +25,7 @@ pub fn App() -> Element {
         body {
             class: "bg-black min-h-svh *:select-none",
             Title {},
-            DogView {},
-            Buttons {}
+            DogView {}
         }
     }
 }
