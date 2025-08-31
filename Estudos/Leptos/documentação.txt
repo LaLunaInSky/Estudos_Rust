@@ -6,4 +6,4 @@ https://book.leptos.dev/
  /*******************/
 /* Capítulo Parado */
 https://book-leptos-dev.translate.goog/view/04_iteration.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
-+  +
++ Acessando um índice durante a iteração com<ForEnumerate/> +

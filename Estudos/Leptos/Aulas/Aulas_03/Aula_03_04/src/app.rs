@@ -1,28 +1,34 @@
 use leptos::prelude::*;
 
+mod static_list;
+mod dinamic_list;
+
+use static_list::StaticList;
+use dinamic_list::DinamicList;
+
 #[component]
 pub fn App() -> impl IntoView {
-    let values = vec![0, 1, 2];
-
-    let 
-
     view! {
-        <h1>"Hello, World!"</h1>
-        <div>
-            <p>
-                {values.clone()}
-            </p>
-            <ul>
-                {values.into_iter()
-                    .map(|n| view! {
-                        <li>
-                            {n}
-                        </li>
-                    })
-                    // .collect::<Vec<_>>()
-                    .collect_view()
-                }
-            </ul>
-        </div>
+        <h1>
+            "Interation"
+        </h1>
+        <h2>
+            "Static List"
+        </h2>
+        <p>
+            "Use this pattern if the list itself is static."
+        </p>
+        <StaticList 
+            length=5
+        />
+        <h2>
+            "Dinamic List"
+        </h2>
+        <p>
+            "Use this pattern if the rows in your list will change."
+        </p>
+        <DinamicList 
+            initial_length=5
+        />
     }
 }
