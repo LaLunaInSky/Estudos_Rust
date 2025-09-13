@@ -97,10 +97,11 @@ impl ConfiguraçãoDasOpções {
     ) {
         println!(
             "
- [ {:^3} ] - Números
- [ {:^3} ] - Símbolos
- [ {:^3} ] - Maiúsculas
- [{:^5}] - Total de letras
+ 1. [ {:^3} ] - Números
+ 2. [ {:^3} ] - Símbolos
+ 3. [ {:^3} ] - Maiúsculas
+ 4. [{:^5}] - Total de letras
+ 5. Gerar a Senha
         ",
             self.get_contém_números(),
             self.get_contém_símbolos(),

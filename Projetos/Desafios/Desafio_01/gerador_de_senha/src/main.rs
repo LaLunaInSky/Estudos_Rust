@@ -37,7 +37,7 @@ fn trocar_a_opção_x(
         Ok(_) => {
             match input.trim().parse::<u8>() {
                 Ok(opção) => {
-                    let total_de_opções: u8 = 4;
+                    let total_de_opções: u8 = 5;
 
                     if opção > 0 && opção < total_de_opções + 1 {
                         limpar_o_terminal_bash();
@@ -68,6 +68,14 @@ fn trocar_a_opção_x(
                                 limpar_o_terminal_bash();
 
                                 configuração_da_opção_de_senha.get_mostrador_de_opções();
+                            }
+                            5 => {
+                                configuração_da_opção_de_senha.get_mostrador_de_opções();
+
+                                println!(
+                                    "{}\n",
+                                    "não gerando ainda!"
+                                )
                             }
                             _ => (),
                         }

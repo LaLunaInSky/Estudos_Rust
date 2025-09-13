@@ -1,5 +1,5 @@
 [package]
-name = "criador_de_senha"
+name = "gerador_de_senha"
 version = "0.1.0"
 edition = "2024"
 
