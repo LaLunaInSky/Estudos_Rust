@@ -102,6 +102,7 @@ impl ConfiguraçãoDasOpções {
  3. [ {:^3} ] - Maiúsculas
  4. [{:^5}] - Total de letras
  5. Gerar a Senha
+ 6. Fechar Programa
         ",
             self.get_contém_números(),
             self.get_contém_símbolos(),
