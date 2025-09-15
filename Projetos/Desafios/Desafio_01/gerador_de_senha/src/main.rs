@@ -2,14 +2,13 @@
 //     io::stdin
 // };
 
-mod configuracoes_das_opcoes_da_senha;
-mod limpador_do_terminal_bash;
-mod troca_das_opcoes;
-mod obtencao_de_numero_inteiro;
+mod recursos_terminal;
 
-use configuracoes_das_opcoes_da_senha::ConfiguraçãoDasOpções;
-use limpador_do_terminal_bash::limpar_o_terminal_bash;
-use troca_das_opcoes::trocar_a_opção_x;
+use crate::recursos_terminal::{
+    configuracoes_das_opcoes_da_senha::ConfiguraçãoDasOpções,
+    limpador_do_terminal_bash::limpar_o_terminal_bash,
+    troca_das_opcoes::trocar_a_opção_x 
+};
 
 fn main() {
     limpar_o_terminal_bash();

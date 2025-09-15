@@ -2,7 +2,7 @@ use std::{
     io::stdin
 };
 
-use crate::{
+use crate::recursos_terminal::{
     configuracoes_das_opcoes_da_senha::ConfiguraçãoDasOpções,
     obtencao_de_numero_inteiro::obter_um_número_inteiro,
     limpador_do_terminal_bash::limpar_o_terminal_bash
