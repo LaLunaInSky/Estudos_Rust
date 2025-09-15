@@ -1,8 +1,5 @@
-// use std::{
-//     io::stdin
-// };
-
 mod recursos_terminal;
+mod interfaces;
 
 use crate::recursos_terminal::{
     configuracoes_das_opcoes_da_senha::ConfiguraçãoDasOpções,
