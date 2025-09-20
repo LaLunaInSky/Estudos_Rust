@@ -8,6 +8,8 @@ use crate::recursos_terminal::{
     limpador_do_terminal_bash::limpar_o_terminal_bash
 };
 
+use crate::gerador_de_senha::gerador_de_senha;
+
 pub fn trocar_a_opção_x(
     configuração_da_opção_de_senha: &mut ConfiguraçãoDasOpções
 ) -> bool {
@@ -61,9 +63,16 @@ pub fn trocar_a_opção_x(
                                 5 => {
                                     configuração_da_opção_de_senha.get_mostrador_de_opções();
 
+                                    let senha_gerada = gerador_de_senha(
+                                        configuração_da_opção_de_senha.get_bool_contém_números(),
+                                        configuração_da_opção_de_senha.get_bool_contém_símbolos(),
+                                        configuração_da_opção_de_senha.get_bool_contém_maiúsculas(),
+                                        configuração_da_opção_de_senha.get_total_de_letras()
+                                    );
+
                                     println!(
                                         "{}\n",
-                                        "não gerando ainda!"
+                                        senha_gerada
                                     )
                                 }
                                 6 => return false,

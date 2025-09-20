@@ -1,5 +1,6 @@
 mod recursos_terminal;
 mod interfaces;
+mod gerador_de_senha;
 
 use crate::recursos_terminal::{
     configuracoes_das_opcoes_da_senha::ConfiguraçãoDasOpções,

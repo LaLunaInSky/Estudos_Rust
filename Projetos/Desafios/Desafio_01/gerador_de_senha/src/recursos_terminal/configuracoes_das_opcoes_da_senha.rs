@@ -62,7 +62,25 @@ impl ConfiguraçãoDasOpções {
         }
     }
 
-    pub fn get_contém_números(
+    pub fn get_bool_contém_números(
+        &self
+    ) -> bool {
+        return self.contém_números;
+    }
+
+    pub fn get_bool_contém_símbolos(
+        &self
+    ) -> bool {
+        return self.contém_símbolos;
+    }
+
+    pub fn get_bool_contém_maiúsculas(
+        &self
+    ) -> bool {
+        return self.contém_maiúsculas;
+    }
+
+    pub fn get_string_contém_números(
         &self
     ) -> String {
         return self.analisar_o_bool(
@@ -70,7 +88,7 @@ impl ConfiguraçãoDasOpções {
         );
     }
 
-    pub fn get_contém_símbolos(
+    pub fn get_string_contém_símbolos(
         &self
     ) -> String {
         return self.analisar_o_bool(
@@ -78,7 +96,7 @@ impl ConfiguraçãoDasOpções {
         );
     }
 
-    pub fn get_contém_maiúsculas(
+    pub fn get_string_contém_maiúsculas(
         &self
     ) -> String {
         return self.analisar_o_bool(
@@ -104,9 +122,9 @@ impl ConfiguraçãoDasOpções {
  5. Gerar a Senha
  6. Fechar Programa
         ",
-            self.get_contém_números(),
-            self.get_contém_símbolos(),
-            self.get_contém_maiúsculas(),
+            self.get_string_contém_números(),
+            self.get_string_contém_símbolos(),
+            self.get_string_contém_maiúsculas(),
             self.get_total_de_letras()
         ); 
     }
