@@ -10,3 +10,7 @@ https://book-iced-rs.translate.goog/additional-resources.html?_x_tr_sl=en&_x_tr_
 /* Capítulo Parado */
 https://book-iced-rs.translate.goog/additional-resources.html?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=wapp
 +  +
+
+ /****************/
+/* Vídeo Parado */
+https://youtu.be/gcBJ7cPSALo?t=880
